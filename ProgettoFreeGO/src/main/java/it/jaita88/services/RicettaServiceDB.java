@@ -3,10 +3,13 @@ package it.jaita88.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
 
 import it.jaita88.models.Ricetta;
 import it.jaita88.repositories.RicettaRepository;
-
+@Service
+@Primary
 public class RicettaServiceDB implements RicettaService{
 	@Autowired
 	RicettaRepository repository;

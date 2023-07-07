@@ -3,10 +3,11 @@ package it.jaita88.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import it.jaita88.models.Intolleranza;
 import it.jaita88.repositories.IntolleranzaRepository;
-
+@Service
 public class IntolleranzaServiceDB implements IntolleranzaService{
 	@Autowired
 	IntolleranzaRepository repository;

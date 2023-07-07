@@ -2,6 +2,8 @@ package it.jaita88.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import it.jaita88.models.Ingrediente;
 
 public interface IngredienteService {
