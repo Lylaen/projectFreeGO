@@ -1,5 +1,6 @@
 package it.jaita88.models;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "ricette")
-public class Ricetta {
+public class Ricetta{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -35,7 +36,7 @@ public class Ricetta {
 				@JoinColumn(name = "id_ingrediente",
 						referencedColumnName = "id")
 		})
-	private List<Ingrediente> ingredienti = new ArrayList<>();
+	private List<Ingrediente> ingredientilist = new ArrayList<>();
 	public Integer getId() {
 		return id;
 	}
@@ -54,19 +55,22 @@ public class Ricetta {
 	public void setTempo(String tempo) {
 		this.tempo = tempo;
 	}
-	public List<Ingrediente> getIngredienti() {
-		return ingredienti;
+	public List<Ingrediente> getIngredientilist() {
+		return ingredientilist;
 	}
-	public void setIngredienti(List<Ingrediente> ingredienti) {
-		this.ingredienti = ingredienti;
-	}
-	public void addIngrediente(Ingrediente ingrediente) {
-		ingredienti.add(ingrediente);
+	public void setIngredientilist(List<Ingrediente> ingredientilist) {
+		this.ingredientilist = ingredientilist;
 	}
 	@Override
 	public String toString() {
-		return "Ricetta [id=" + id + ", nome=" + nome + ", tempo=" + tempo + ", ingredienti=" + ingredienti + "]";
+		return "Ricetta [id=" + id + ", nome=" + nome + ", tempo=" + tempo + ", ingredientilist=" + ingredientilist
+				+ "]";
 	}
+	public void addIngrediente(Ingrediente ingrediente) {
+		ingredientilist.add(ingrediente);
+	}
+	
+	
 	
 	
 }
