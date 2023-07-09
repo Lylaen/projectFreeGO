@@ -37,6 +37,16 @@ public class Ricetta{
 						referencedColumnName = "id")
 		})
 	private List<Ingrediente> ingredientilist = new ArrayList<>();
+	
+	public Ricetta() {
+	}
+	
+	public Ricetta(Integer id, String nome, String tempo) {
+		this.id = id;
+		this.nome = nome;
+		this.tempo = tempo;
+	}
+
 	public Integer getId() {
 		return id;
 	}
