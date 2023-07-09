@@ -37,6 +37,8 @@ public class Ricetta{
 						referencedColumnName = "id")
 		})
 	private List<Ingrediente> ingredientilist = new ArrayList<>();
+	@ManyToMany(mappedBy="preferiti")
+	private List<UtenteLogin> utenti = new ArrayList<>();
 	
 	public Ricetta() {
 	}
