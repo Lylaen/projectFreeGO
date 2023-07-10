@@ -26,6 +26,16 @@ public class RicetteIngredientiServiceImpl implements RicetteIngredientiService{
 		}		
 		return risultato;
 	}
+	@Override
+	public List<Ricetta> findRicettaByIngredienteGrammi(String nomeIngrediente, Integer grammiml) {
+		List<Object> res = repository.findRicettaByIngredienteGrammi(nomeIngrediente, grammiml);
+		List<Ricetta> risultato = new ArrayList<>();
+		for(int i = 0; i < res.size(); i++) {
+			Ricetta ricetta = repositoryric.findRicettaById((Integer) res.get(i));
+			risultato.add(ricetta);			
+		}
+		return risultato;
+	}
 	
 	
 }

@@ -7,4 +7,5 @@ import it.jaita88.models.Ricetta;
 
 public interface RicetteIngredientiService {
 	List<Ricetta> findRicettaByIngrediente(String nomeIngrediente);
+	List<Ricetta> findRicettaByIngredienteGrammi(String nomeIngrediente, Integer grammiml);
 }
