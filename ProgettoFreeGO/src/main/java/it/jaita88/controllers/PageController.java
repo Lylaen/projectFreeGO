@@ -128,7 +128,7 @@ public class PageController {
 			tempo = Integer.valueOf(request.getParameter("tempo3"));
 		}
 		//grammi
-		if(request.getParameter("grammiml") != null) {
+		if(request.getParameter("grammiml") != "" && request.getParameter("grammiml") != null && request.getParameter("grammiml") != " " ) {
 			grammi = Integer.valueOf(request.getParameter("grammiml"));
 		}
 		System.err.println(int1);
