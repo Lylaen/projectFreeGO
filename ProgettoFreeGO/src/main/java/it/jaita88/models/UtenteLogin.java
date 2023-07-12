@@ -67,7 +67,7 @@ public class UtenteLogin implements Serializable {
 	public String getUsername() {
 		return username;
 	}
-
+	
 	public void setUsername(String username) {
 		this.username = username;
 	}
@@ -103,7 +103,13 @@ public class UtenteLogin implements Serializable {
 	public void addRicetta( Ricetta ricetta) {
 		preferiti.add(ricetta);
 	}
+	public Set<Ruolo> getRuoli() {
+		return ruoli;
+	}
 
+	public void setRuoli(Set<Ruolo> ruoli) {
+		this.ruoli = ruoli;
+	}
 	@Override
 	public String toString() {
 		return "UtenteLogin [username=" + username + ", password=" + password + ", ruoli=" + ruoli

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import it.jaita88.models.Ingrediente;
 import it.jaita88.models.Ricetta;
+import it.jaita88.security.SessionUtils;
 import it.jaita88.services.IngredienteService;
 import it.jaita88.services.RicetteIngredientiService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,7 +22,13 @@ public class PageController {
 	IngredienteService service;
 	@Autowired
 	RicetteIngredientiService servicericing;
-
+	@GetMapping("/admin/gestioneadmin")
+	public String gestioneAdmin(Model model) {
+		if(SessionUtils.isAdmin()) {
+			return "gestioneadmin";
+		}
+		return "error";
+	}
 	@GetMapping("/home")
 	public String home(Model model) {
 		return "index";
@@ -133,4 +140,4 @@ public class PageController {
 		model.addAttribute("result", result);
 		return "result";
 	}
-}
+	}
