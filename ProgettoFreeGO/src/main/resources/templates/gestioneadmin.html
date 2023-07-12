@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gestioneadmin</title>
+    <title>Gestione Admin</title>
     <style>
         .box {
             transition: box-shadow .3s;
@@ -110,9 +110,9 @@
                                 Gestione Ricette
                             </button>
                             <ul class="dropdown-menu dropdown-menu1">
-                                <li><a class="dropdown-item di1" href="#">Aggiungi</a></li>
-                                <li><a class="dropdown-item di1" href="#">Cancella</a></li>
-                                <li><a class="dropdown-item di1" href="#">Aggiorna</a></li>
+                                <li><a class="dropdown-item di1" th:href="@{/admin/addricettainizio}">Aggiungi</a></li>
+                                <li><a class="dropdown-item di1" th:href="@{/admin/deletericettainizio}">Cancella</a></li>
+                                <li><a class="dropdown-item di1" th:href="@{/admin/updatericettainizio}">Aggiorna</a></li>
                             </ul>
                         </div>
                         <div class="btn-group dropend" role="group">
@@ -121,9 +121,9 @@
                                 Gestione Ingredienti
                             </button>
                             <ul class="dropdown-menu dropdown-menu1">
-                                <li><a class="dropdown-item di1" href="#">Aggiungi</a></li>
-                                <li><a class="dropdown-item di1" href="#">Cancella</a></li>
-                                <li><a class="dropdown-item di1" href="#">Aggiorna</a></li>
+                                <li><a class="dropdown-item di1" th:href="@{/admin/addingredienteinizio}">Aggiungi</a></li>
+                                <li><a class="dropdown-item di1" th:href="@{/admin/deleteingredienteinizio}">Cancella</a></li>
+                                <li><a class="dropdown-item di1" th:href="@{/admin/updateingredienteinizio}">Aggiorna</a></li>
                             </ul>
                         </div>
                         <div class="btn-group dropend" role="group">
@@ -132,15 +132,15 @@
                                 Gestione Intolleranze
                             </button>
                             <ul class="dropdown-menu dropdown-menu1">
-                                <li><a class="dropdown-item di1" href="#">Aggiungi</a></li>
-                                <li><a class="dropdown-item di1" href="#">Cancella</a></li>
-                                <li><a class="dropdown-item di1" href="#">Aggiorna</a></li>
+                                <li><a class="dropdown-item di1" th:href="@{/admin/addintolleranzainizio}">Aggiungi</a></li>
+                                <li><a class="dropdown-item di1" th:href="@{/admin/deleteintolleranzainizio}">Cancella</a></li>
+                                <li><a class="dropdown-item di1" th:href="@{/admin/updateintolleranzainizio}">Aggiorna</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer text-body-secondary d-flex justify-content-center">
-                    <button type="button" class="btn btn-light btn1" href="#">
+                    <button type="button" class="btn btn-light btn1" th:href="@{/home}">
                         Home
                     </button>
                 </div>
