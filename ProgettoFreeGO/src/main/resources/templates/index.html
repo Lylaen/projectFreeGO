@@ -3,50 +3,26 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bootstrap demo</title>
-	<base href="http://localhost:8080">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-	<link rel="stylesheet" href="../static/css/index.css" th:href="@{css/index.css}">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{css/index.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
 </head>
 
 <body>
 	<header>
-		<!-- navbar -->
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">Navbar</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Features</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Pricing</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link disabled">Disabled</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<!-- fine navbar -->
 		
-			<div class="container-fluid sear d-flex ">
+			<div class="container-fluid sear d-flex flex-sm-wrap ">
 
 				<div class="row-grid col-lg-8 " style="padding: -10rem;">
-					<div class="col-lg-12 mb-5">
-						<h1 style="justify-content: center;">Vai dove ti porta il cuore, al frigo!</h1>
+					<div class="col-lg-12">
+						<h1 style="text-align: center;">Vai dove ti porta il cuore, al frigo!</h1>
 					</div>
 			<form method="post" th:action="@{/result}">
 					<div class="main-search-input-wrap ">
@@ -58,268 +34,538 @@
 						</div>
 					</div>
 					<div class="container d-flex" style="gap: 10px;  margin-top: 25px; justify-content: center;">
-						<p>
-							<a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button"
-								aria-expanded="false" aria-controls="collapseExample">
-								Intolleranze
-							</a>
-						</p>
-						<div class="collapse  " id="collapseExample">
-							<div>
-								<div class="card card-body">
-									<div class="row ">
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="celiachia"
-												name="intolleranza1" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Celiachia
-											</label>
-										</div>
-										<div class="form-check col cl1 ">
-											<input class="form-check-input" type="checkbox" value="crostacei"
-												name="intolleranza2" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Crostacei
-											</label>
-										</div>
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="lattosio"
-												name="intolleranza3" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Lattosio
-											</label>
-										</div>
-										<div class="form-check col  cl1">
-											<input class="form-check-input" type="checkbox" value="soia"
-												name="intolleranza4" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Soia
-											</label>
-										</div>
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="fruttasecca"
-												name="intolleranza5" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Frutta Secca
-											</label>
-										</div>
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="uova"
-												name="intolleranza6" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Uova
-											</label>
-										</div>
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="pesce"
-												name="intolleranza7" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Pesce
-											</label>
-										</div>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#modalIntolleranze">
+                        Intolleranze
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTempo">
+                        Tempo
+                    </button>
+					<div class="input-group  ">
 
-									</div>
-									<div class="row ">
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="arachidi"
-												name="intolleranza8" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Arachidi
-											</label>
-										</div>
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="sedano"
-												name="intolleranza9" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Sedano
-											</label>
-										</div>
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="senape"
-												name="intolleranza10" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Senape
-											</label>
-										</div>
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="sesamo"
-												name="intolleranza11" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Sesamo
-											</label>
-										</div>
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="anidridesolforosa"
-												name="intolleranza12" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Anidride Solforosa
-											</label>
-										</div>
-										<div class="form-check col  cl1">
-											<input class="form-check-input" type="checkbox" value="lupini"
-												name="intolleranza13" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Lupini
-											</label>
-										</div>
-										<div class="form-check col  cl1">
-											<input class="form-check-input" type="checkbox" value="molluschi"
-												name="intolleranza14" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												Molluschi
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					
+                        <input type="text" class="form-control" aria-describedby="inputGroup-sizing-lg"
+                           name="grammiml" placeholder="Inserisci Grammi" aria-label="Cerca Ingrediente" style="width: auto;">
 
-						<p>
-							<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
-								aria-expanded="false" aria-controls="collapseExample">
-								Tempo
-							</a>
-						</p>
-						<div class="collapse  " id="collapseExample">
-							<div>
-								<div class="card card-body">
-									<div class="row ">
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="15" name="tempo1"
-												id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												15
-											</label>
-										</div>
-										<div class="form-check col cl1 ">
-											<input class="form-check-input" type="checkbox" value="30" name="tempo2"
-												id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												30
-											</label>
-										</div>
-										<div class="form-check col cl1">
-											<input class="form-check-input" type="checkbox" value="60" name="tempo3"
-												id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												60
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+                    </div><!-- fine searchbar grammi -->
 
-						<p>
-							<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
-								aria-expanded="false" aria-controls="collapseExample">
-								Grammi
-							</a>
-						</p>
-						<div class="main-search-input-wrap ">
+                </div><!-- fine sear ingrediente -->
 
 
-							<div class="input-group input-group-lg shadow">
+                <div class="container-fluid d-flex flex-nowrap">
+                    <!-- Modal Intolleranze -->
+                    <div class="modal fade col" id="modalIntolleranze" tabindex="-1"
+                        aria-labelledby="modalIntolleranzeLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalIntolleranzeLabel">Intolleranze</h5>
+                                    <button type="button" class="btn-close " data-bs-dismiss="modal"
+                                        aria-label="Close" ></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="glutine"
+                                            name="intolleranza1" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Glutine
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="crostacei"
+                                            name="intolleranza2" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Crostacei
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="lattosio"
+                                            name="intolleranza3" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Lattosio
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="soia"
+                                            name="intolleranza4" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Soia
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="fruttasecca"
+                                            name="intolleranza5" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Frutta Secca
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="uova"
+                                            name="intolleranza6" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Uova
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="pesce"
+                                            name="intolleranza7" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Pesce
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="arachidi"
+                                            name="intolleranza8" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Arachidi
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="sedano"
+                                            name="intolleranza9" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Sedano
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="senape"
+                                            name="intolleranza10" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Senape
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="sesamo"
+                                            name="intolleranza11" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Sesamo
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="anidridesolforosa"
+                                            name="intolleranza12" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Anidride Solforosa
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="lupini"
+                                            name="intolleranza13" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Lupini
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="molluschi"
+                                            name="intolleranza14" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Molluschi
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Chiudi</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- fine modal intolleranze -->
 
-								<input type="text" class="form-control " aria-label="Sizing example input"
-									aria-describedby="inputGroup-sizing-lg" placeholder="Cerca Ingrediente"
-									name="grammiml">
-								<span class="input-group-text btnmod" id="inputGroup-sizing-lg">Cerca</span>
-							</div>
+                    <!-- Modal Tempo -->
+                    <div class="modal fade col-4" id="modalTempo" tabindex="-1" aria-labelledby="modalTempoLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTempoLabel">Tempo</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="15"
+                                                name="tempo1" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                15
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="30"
+                                            name="tempo2" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                30
+                                            </label>
+                                        </div>
+                                        <div class="form-check col cl1">
+                                            <input class="form-check-input" type="checkbox" value="60"
+                                            name="tempo3" id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                60
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Chiudi</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- fine modal tempo -->
 
 
-						</div>
-
-
-
-					</div>
-				</div>
+ 				</div>
+            </div>
+        </div>
 		</form>
 	</header> <!-- fine header -->
+	
 	<!-- inizio section -->
-	<section>
-		<div class="image-container d-flex row " style="padding: 1.5%; ">
+    <section>
+        <div class="image-container d-flex row section section1" style="padding: 1.5%; ">
 
-			<div class="col-md animate__animated animate__fadeIn">
-				<h2 style="justify-content: center;" class="col-md d-flex">Antipasti</h2>
-				<div class="content">
-					<a href="#">
-						<div class="content-overlay"></div>
-						<img class="content-image image1"
-							src="https://citynews-salernotoday.stgy.ovh/~media/square-hi/47350969299022/pasqua-2023-va-in-tavola-l-antipasto-chic-a-suon-di-cubetti.jpg">
-						<div class="content-details fadeIn-bottom">
-							<div class="row d-flex">
-								<h3 class="content-title d-flex displayh3hov"> <span
-										class="badge text-bg-secondary  ">Vai alla selezione</span></h3>
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
+            <div id="elemento1" class="col-md animate__animated  animate__slideInUp">
+                <h2 style="justify-content: center;" class="col-md d-flex">Antipasti</h2>
+                <div class="content">
+                    <a href="#">
+                        <div class="content-overlay"></div>
+                        <img class="content-image image1"
+                            src="https://media-assets.lacucinaitaliana.it/photos/64946aa344bcd2f6f4f30d92/master/w_1600,c_limit/PAN-POSS-CON-POMODORO-E-ORIGANO1.jpg">
+                        <div class="content-details fadeIn-bottom">
+                            <div class="row d-flex">
+                                <h5 class="content-title d-flex displayh3hov"> <span
+                                        class="badge text-bg-secondary  ">Vai alla selezione</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-			<div class="col-md animate__animated animate__fadeIn">
-				<h2 style="justify-content: center;" class="col-md d-flex">Primi</h2>
-				<div class="content">
-					<a href="#">
-						<div class="content-overlay"></div>
-						<img class="content-image image1"
-							src="https://d15j9y5wlusr11.cloudfront.net/filer_public_thumbnails/filer_public/45/1b/451b8d88-4d35-4c23-aaf2-e8568c518e89/recipe.jpg__1200x1200_q80_ALIAS-extra_large_crop-smart_subsampling-2.jpg">
-						<div class="content-details fadeIn-bottom">
-							<h3 class="content-title d-flex displayh3hov"> <span class="badge text-bg-secondary ">Vai
-									alla selezione</span></h3>
-						</div>
-					</a>
-				</div>
-			</div>
+            <div id="elemento2" class="col-md animate__animated  animate__slideInUp">
+                <h2 style="justify-content: center;" class="col-md d-flex">Primi</h2>
+                <div class="content">
+                    <a href="#">
+                        <div class="content-overlay"></div>
+                        <img class="content-image image1"
+                            src="https://media-assets.lacucinaitaliana.it/photos/64a57cc1da53b8e5e1b60e86/master/w_1600,c_limit/RAVIOLO-APERTO-CON-PRIMIZIE1.jpg">
+                        <div class="content-details fadeIn-bottom">
+                            <h5 class="content-title d-flex displayh3hov"> <span class="badge text-bg-secondary ">Vai
+                                    alla selezione</span></h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-			<div class="col-md animate__animated animate__fadeIn">
-				<h2 style="justify-content: center;" class="col-md d-flex">Secondi</h2>
-				<div class="content">
-					<a href="#">
-						<div class="content-overlay"></div>
-						<img class="content-image image1"
-							src="https://store.gamberorosso.it/1137-superlarge_default/secondi-di-pesce.jpg">
-						<div class="content-details fadeIn-bottom">
-							<h3 class="content-title d-flex displayh3hov"> <span class="badge text-bg-secondary ">Vai
-									alla selezione</span></h3>
+            <div id="elemento3" class="col-md animate__animated  animate__slideInUp">
+                <h2 style="justify-content: center;" class="col-md d-flex">Secondi</h2>
+                <div class="content">
+                    <a href="#">
+                        <div class="content-overlay"></div>
+                        <img class="content-image image1"
+                            src="https://media-assets.lacucinaitaliana.it/photos/63065e349b94c27aedccf07b/master/w_1600,c_limit/Sgombro-alla-rucola-con-pesto-di-erbe-e-olive1.jpg">
+                        <div class="content-details fadeIn-bottom">
+                            <h5 class="content-title d-flex displayh3hov" ;> <span class="badge text-bg-secondary ">Vai
+                                    alla selezione</span></h5>
 
-						</div>
-					</a>
-				</div>
-			</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
-			<div class="col-md animate__animated animate__fadeIn">
-				<h2 style="justify-content: center;" class="col-md d-flex">Dessert</h2>
-				<div class="content">
-					<a href="#">
-						<div data-toggle="animation" data-animation="zoom-in" data-animation-start="onLoad"
-							class="fas fa-car-side fa-3x">
-							<div class="content-overlay "></div>
-							<img class="content-image image1"
-								src="https://simplelivingrecipes.com/wp-content/uploads/2021/01/Date-night-dessert-sq.jpg">
-							<div class="content-details fadeIn-bottom">
-								<h3 class="content-title d-flex displayh3hov"> <span
-										class="badge text-bg-secondary ">Vai
-										alla selezione</span></h3>
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
+            <div id="elemento4" class="col-md animate__animated  animate__slideInUp">
+                <h2 style="justify-content: center;" class="col-md d-flex">Dessert</h2>
+                <div class="content">
+                    <a href="#">
+
+                        <div class="content-overlay "></div>
+                        <img class="content-image image1"
+                            src="https://media-assets.lacucinaitaliana.it/photos/631778fde7cd14449a244908/master/w_1600,c_limit/Plum-cake-al-limone-e-frutti-di-bosco1.jpg">
+                        <div class="content-details fadeIn-bottom">
+                            <h5 class="content-title d-flex displayh3hov"> <span class="badge text-bg-secondary ">Vai
+                                    alla selezione</span></h5>
+                        </div>
+                </div>
+                </a>
+            </div>
+        </div> <!-- fine selezioni -->
+
+        <div class="carousel-container  section section2">
+            <div class="carousel-title">La nostra selezione</div>
+            <img class="carousel-background">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="row d-flex ">
+                            <div class="col d-flex d-md-block mb-4">
+
+                                <div class="card">
+
+                                    <img src="https://www.cucchiaio.it/content/cucchiaio/it/ricette/2019/04/pasta-e-patate/_jcr_content/header-par/image-single.img.jpg/1554822858778.jpg"
+                                        class="card-img-top " alt="Immagine 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pasta e patate alla napoletana</h5>
+                                        <a href="#" class="link">
+                                            <p class="card-text pcard"> Imparate con noi a preparare una voluttuosa
+                                                pasta
+                                                della tradizione campana, la pasta, patate e provola. Segreti compresi.
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md mb-4">
+                                <div class="card">
+                                    <img src="https://i.pinimg.com/originals/8f/98/4a/8f984a90a62679c9a2e6be8dbec65d51.jpg"
+                                        class="card-img-top" alt="Immagine 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Muffin al cioccolato</h5>
+                                        <a href="#" class="link">
+                                            <p class="card-text pcard "> I muffin al cioccolato sono dei dolcetti
+                                                soffici e
+                                                deliziosi. Per iniziare
+                                                la
+                                                giornata nel migliore dei modi, con una dose extra di energia!</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md ">
+                                <div class="card">
+                                    <img src="https://media-assets.lacucinaitaliana.it/photos/61fafe6e75d7988bd4720623/16:9/w_1600%2Cc_limit/4c6260f5-9fec-4efc-b7a4-e20fe1ef9b4c.jpeg"
+                                        class="card-img-top" alt="Immagine 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vellutata di fave e piselli</h5>
+                                        <a href="#" class="link">
+                                            <p class="card-text pcard">La vellutata di piselli, è una vellutata
+                                                primaverile che si può consumare calda o tiepida. </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row d-flex">
+                            <div class="col-md mb-4 ">
+                                <div class="card ">
+                                    <img src="https://www.basilicosecco.com/wp-content/uploads/2021/11/photo6019398392377094719.jpg"
+                                        class="card-img-top" alt="Immagine 4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pollo all'arancia</h5>
+                                        <a href="#" class="link">
+                                            <p class="card-text pcard">Il Pollo all'arancia è un secondo di carne facile
+                                                e veloce. Gli ingredienti necessari sono pochissimi, ma di grande
+                                                qualità. </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md mb-4">
+                                <div class="card">
+                                    <img src="https://media-assets.lacucinaitaliana.it/photos/63a576e2eeeb7e58f82c0add/1:1/w_1600,c_limit/hummus-di-avocado-e-cannellini.jpg"
+                                        class="card-img-top" alt="Immagine 5">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Humus di avocado</h5>
+                                        <a href="#" class="link">
+                                            <p class="card-text pcard">Aperitivo leggero con ricette a base di verdura e
+                                                frutta, come questo cremoso hummus di avocado</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="card">
+                                    <img src="https://media-assets.lacucinaitaliana.it/photos/6407b9bfb60cfe9a42d2d011/1:1/w_1600,c_limit/pancake-di-semola.jpg"
+                                        class="card-img-top" alt="Immagine 6">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pancakes alla banana</h5>
+                                        <a href="#" class="link">
+                                            <p class="card-text pcard ">I pancakes alla banana ricetta light sono una
+                                                variante più sana e genuina dei classici pancakes americani.
+                                                Essi infatti contengono nell’impasto la polpa della banana matura e
+                                                pochi altri ingredienti.</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="carousel-control">
+                    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true">
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section> <!-- fine section -->
+
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+            <!-- Left -->
+            <div class="me-5">
+                <span>Connettiti con noi</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href=" #" class="text-white me-4">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="bi bi-google"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="bi bi-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <img src="img/logo3.png" alt="" style="width:50%;">
+                        <h6 class="text-uppercase fw-bold">Free-Go</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            Dove non riesce un libro, il frigo può!
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Products</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            <a href="#!" class="text-white link">Su di noi</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white link">Ricette</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white link">News</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white link">Video</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Useful links</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            <a href="#!" class="text-white link">Accedi al tuo account</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white link">Uniscti a noi</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white link">Alex Peluso</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white link">Aiuto</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <div class="row justify-content-center">
+
+                            <h6 class="text-uppercase fw-bold d-flex d-inline-block">Iscriviti alla nostra newsletter
+                            </h6>
+
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto "
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <form>
+                                <div class="form-group mb-4">
+                                    <input type="email" class="form-control"
+                                        placeholder="Inserisci il tuo indirizzo email" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Iscriviti</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2023 Copyright: Free-Go
+
+        </div>
+
+    </footer>
+    <!-- Footer -->
+
+
+    <!-- HA-HA -->
 
 
 
+    <script th:src="@{js/script.js}"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
 
-	</section> <!-- fine section -->
-
-
-	<script src="index.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-		crossorigin="anonymous"></script>
 </body>
 
 </html>
