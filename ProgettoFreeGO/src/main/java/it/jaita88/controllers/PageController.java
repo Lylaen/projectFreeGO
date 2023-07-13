@@ -29,6 +29,10 @@ public class PageController {
 		}
 		return "error";
 	}
+	@GetMapping("/Pasta-con-patate-alla-napoletana")
+	public String ricetta1(Model model) {		
+		return "PastaPatate";
+	}
 	@GetMapping("/home")
 	public String home(Model model) {
 		return "index";
@@ -137,6 +141,9 @@ public class PageController {
 		System.err.println(grammi);
 		
 		List<Ricetta> result = servicericing.findRicettaByFilter(nomeing, tempo, grammi, int1, int2);
+		for(Ricetta ric : result) {
+			System.err.println(ric.toString());
+		}
 		model.addAttribute("result", result);
 		return "result";
 	}

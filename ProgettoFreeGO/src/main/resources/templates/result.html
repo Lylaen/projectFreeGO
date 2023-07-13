@@ -12,29 +12,13 @@
 </head>
 
 <body>
-  <!-- HEADER-->
-  
-
-  <!-- CONTENT-->
-  <div class="container mt-5 vh-100">
-    <h1 th:text="${message}"></h1>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Nome</th>
-          <th scope="col">Tempo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr th:each="a : ${result}">
-          <th scope="row" th:text="${a.nome}"></th>
-          <td th:text="${a.tempo}"></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- FOOTER-->
+  <div class="card" th:each="a : ${result}" style="width: 18rem;">
+  <img class="card-img-top" th:src="@{/images/immaginiricette/{zimmagine}(zimmagine=${a.zimmagine})}" alt="Card image cap">
+  <div class="card-body" >
+    <h5 class="card-title" th:text="${a.nome}"></h5>
+    <h6 class="card-subtitle mb-2 text-muted" th:text="${a.tempo}"></h6>
+    <a th:href="@{${#strings.replace(a.nome, ' ', '-')}}">Vai alla ricetta</a>
+</div>
  
 </body>
 
