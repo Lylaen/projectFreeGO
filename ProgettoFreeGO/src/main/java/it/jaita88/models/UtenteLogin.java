@@ -110,11 +110,7 @@ public class UtenteLogin implements Serializable {
 	public void setRuoli(Set<Ruolo> ruoli) {
 		this.ruoli = ruoli;
 	}
-	@Override
-	public String toString() {
-		return "UtenteLogin [username=" + username + ", password=" + password + ", ruoli=" + ruoli
-				+ ", utenteanagrafica=" + utenteanagrafica + "]";
-	}
+	
 	
 
 	}

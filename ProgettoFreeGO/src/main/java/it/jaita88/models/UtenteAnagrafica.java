@@ -85,11 +85,7 @@ public class UtenteAnagrafica implements Serializable {
 			this.login = utentelogin;
 		}
 
-		@Override
-		public String toString() {
-			return "UtenteAnagrafica [username=" + username + ", nome=" + nome + ", cognome=" + cognome + ", email="
-					+ email + ", login=" + login + "]";
-		}
+		
 		
 		
 }

@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap demo</title>
+	<base href="http://localhost:8080">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link rel="stylesheet" href="../static/css/index.css" th:href="@{css/index.css}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
+</head>
+
+<body>
+	<header>
+		<!-- navbar -->
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Navbar</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Features</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Pricing</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled">Disabled</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- fine navbar -->
+		
+			<div class="container-fluid sear d-flex ">
+
+				<div class="row-grid col-lg-8 " style="padding: -10rem;">
+					<div class="col-lg-12 mb-5">
+						<h1 style="justify-content: center;">Vai dove ti porta il cuore, al frigo!</h1>
+					</div>
+			<form method="post" th:action="@{/result}">
+					<div class="main-search-input-wrap ">
+						<div class="input-group input-group-lg shadow">
+							<input type="text" class="form-control " aria-label="Sizing example input"
+								aria-describedby="inputGroup-sizing-lg" placeholder="Cerca Ingrediente" name="nomeing">
+							<!--<span class="input-group-text btnmod" id="inputGroup-sizing-lg">Cerca</span> -->
+							<button class="input-group-text btnmod" type="submit">Cerca</button>
+						</div>
+					</div>
+					<div class="container d-flex" style="gap: 10px;  margin-top: 25px; justify-content: center;">
+						<p>
+							<a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+								aria-expanded="false" aria-controls="collapseExample">
+								Intolleranze
+							</a>
+						</p>
+						<div class="collapse  " id="collapseExample">
+							<div>
+								<div class="card card-body">
+									<div class="row ">
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="celiachia"
+												name="intolleranza1" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Celiachia
+											</label>
+										</div>
+										<div class="form-check col cl1 ">
+											<input class="form-check-input" type="checkbox" value="crostacei"
+												name="intolleranza2" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Crostacei
+											</label>
+										</div>
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="lattosio"
+												name="intolleranza3" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Lattosio
+											</label>
+										</div>
+										<div class="form-check col  cl1">
+											<input class="form-check-input" type="checkbox" value="soia"
+												name="intolleranza4" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Soia
+											</label>
+										</div>
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="fruttasecca"
+												name="intolleranza5" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Frutta Secca
+											</label>
+										</div>
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="uova"
+												name="intolleranza6" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Uova
+											</label>
+										</div>
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="pesce"
+												name="intolleranza7" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Pesce
+											</label>
+										</div>
+
+									</div>
+									<div class="row ">
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="arachidi"
+												name="intolleranza8" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Arachidi
+											</label>
+										</div>
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="sedano"
+												name="intolleranza9" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Sedano
+											</label>
+										</div>
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="senape"
+												name="intolleranza10" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Senape
+											</label>
+										</div>
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="sesamo"
+												name="intolleranza11" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Sesamo
+											</label>
+										</div>
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="anidridesolforosa"
+												name="intolleranza12" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Anidride Solforosa
+											</label>
+										</div>
+										<div class="form-check col  cl1">
+											<input class="form-check-input" type="checkbox" value="lupini"
+												name="intolleranza13" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Lupini
+											</label>
+										</div>
+										<div class="form-check col  cl1">
+											<input class="form-check-input" type="checkbox" value="molluschi"
+												name="intolleranza14" id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												Molluschi
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+
+						<p>
+							<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+								aria-expanded="false" aria-controls="collapseExample">
+								Tempo
+							</a>
+						</p>
+						<div class="collapse  " id="collapseExample">
+							<div>
+								<div class="card card-body">
+									<div class="row ">
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="15" name="tempo1"
+												id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												15
+											</label>
+										</div>
+										<div class="form-check col cl1 ">
+											<input class="form-check-input" type="checkbox" value="30" name="tempo2"
+												id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												30
+											</label>
+										</div>
+										<div class="form-check col cl1">
+											<input class="form-check-input" type="checkbox" value="60" name="tempo3"
+												id="flexCheckDefault">
+											<label class="form-check-label" for="flexCheckDefault">
+												60
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<p>
+							<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+								aria-expanded="false" aria-controls="collapseExample">
+								Grammi
+							</a>
+						</p>
+						<div class="main-search-input-wrap ">
+
+
+							<div class="input-group input-group-lg shadow">
+
+								<input type="text" class="form-control " aria-label="Sizing example input"
+									aria-describedby="inputGroup-sizing-lg" placeholder="Cerca Ingrediente"
+									name="grammiml">
+								<span class="input-group-text btnmod" id="inputGroup-sizing-lg">Cerca</span>
+							</div>
+
+
+						</div>
+
+
+
+					</div>
+				</div>
+		</form>
+	</header> <!-- fine header -->
+	<!-- inizio section -->
+	<section>
+		<div class="image-container d-flex row " style="padding: 1.5%; ">
+
+			<div class="col-md animate__animated animate__fadeIn">
+				<h2 style="justify-content: center;" class="col-md d-flex">Antipasti</h2>
+				<div class="content">
+					<a href="#">
+						<div class="content-overlay"></div>
+						<img class="content-image image1"
+							src="https://citynews-salernotoday.stgy.ovh/~media/square-hi/47350969299022/pasqua-2023-va-in-tavola-l-antipasto-chic-a-suon-di-cubetti.jpg">
+						<div class="content-details fadeIn-bottom">
+							<div class="row d-flex">
+								<h3 class="content-title d-flex displayh3hov"> <span
+										class="badge text-bg-secondary  ">Vai alla selezione</span></h3>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md animate__animated animate__fadeIn">
+				<h2 style="justify-content: center;" class="col-md d-flex">Primi</h2>
+				<div class="content">
+					<a href="#">
+						<div class="content-overlay"></div>
+						<img class="content-image image1"
+							src="https://d15j9y5wlusr11.cloudfront.net/filer_public_thumbnails/filer_public/45/1b/451b8d88-4d35-4c23-aaf2-e8568c518e89/recipe.jpg__1200x1200_q80_ALIAS-extra_large_crop-smart_subsampling-2.jpg">
+						<div class="content-details fadeIn-bottom">
+							<h3 class="content-title d-flex displayh3hov"> <span class="badge text-bg-secondary ">Vai
+									alla selezione</span></h3>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md animate__animated animate__fadeIn">
+				<h2 style="justify-content: center;" class="col-md d-flex">Secondi</h2>
+				<div class="content">
+					<a href="#">
+						<div class="content-overlay"></div>
+						<img class="content-image image1"
+							src="https://store.gamberorosso.it/1137-superlarge_default/secondi-di-pesce.jpg">
+						<div class="content-details fadeIn-bottom">
+							<h3 class="content-title d-flex displayh3hov"> <span class="badge text-bg-secondary ">Vai
+									alla selezione</span></h3>
+
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md animate__animated animate__fadeIn">
+				<h2 style="justify-content: center;" class="col-md d-flex">Dessert</h2>
+				<div class="content">
+					<a href="#">
+						<div data-toggle="animation" data-animation="zoom-in" data-animation-start="onLoad"
+							class="fas fa-car-side fa-3x">
+							<div class="content-overlay "></div>
+							<img class="content-image image1"
+								src="https://simplelivingrecipes.com/wp-content/uploads/2021/01/Date-night-dessert-sq.jpg">
+							<div class="content-details fadeIn-bottom">
+								<h3 class="content-title d-flex displayh3hov"> <span
+										class="badge text-bg-secondary ">Vai
+										alla selezione</span></h3>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+	</section> <!-- fine section -->
+
+
+	<script src="index.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
