@@ -1,15 +1,16 @@
 package it.jaita88.controllers;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import it.jaita88.models.Ingrediente;
 import it.jaita88.models.Ricetta;
 import it.jaita88.security.SessionUtils;
 import it.jaita88.services.IngredienteService;
@@ -22,6 +23,46 @@ public class PageController {
 	IngredienteService service;
 	@Autowired
 	RicetteIngredientiService servicericing;
+	@GetMapping("/chisiamo")
+	public String chisiamo(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "chisiamo";
+	}
+	@GetMapping("/antipasti") 
+	public String antipasti(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "antipasti";
+	}
+	@GetMapping("/primi") 
+	public String primi(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "primi";
+	}
+	@GetMapping("/secondi") 
+	public String secondi(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "secondi";
+	}
+	@GetMapping("/dessert") 
+	public String dessert(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "dessert";
+	}
 	@GetMapping("/admin/gestioneadmin")
 	public String gestioneAdmin(Model model) {
 		if(SessionUtils.isAdmin()) {
@@ -30,23 +71,126 @@ public class PageController {
 		return "error";
 	}
 	@GetMapping("/Pasta-con-patate-alla-napoletana")
-	public String ricetta1(Model model) {		
+	public String ricetta1(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
 		return "PastaPatate";
 	}
+	@GetMapping("/Frittata-farcita-con-prosciutto-e-mozzarella")
+	public String ricetta2(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Frittata-farcita-con-prosciutto-e-mozzarella";		
+	}
+	@GetMapping("/Carbonara")
+	public String ricetta3(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Carbonara";
+	}
+	@GetMapping("/Hummus-di-avocado-e-ceci")
+	public String ricetta4(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Hummus-di-avocado-e-ceci";
+	}
+	@GetMapping("/Insalata-di-polpo")
+	public String ricetta5(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Insalata-di-polpo";
+	}
+	@GetMapping("/Muffin") 
+	public String ricetta6(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Muffin";
+	}
+	@GetMapping("/Nasello-in-umido")
+	public String ricetta7(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Nasello-in-umido";
+	}
+	@GetMapping("/Pancakes-alla-banana")
+	public String ricetta8(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Pancakes-alla-banana";
+	}
+	@GetMapping("/Pasta-con-crema-di-peperoni-e-salsiccia")
+	public String ricetta9(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Pasta-con-crema-di-peperoni-e-salsiccia";
+	}
+	@GetMapping("/Pollo-con-spremuta-di-arancia")
+	public String ricetta10(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Pollo-con-spremuta-di-arancia";
+	}
+	@GetMapping("/Vellutata-di-fave-e-piselli")
+	public String ricetta11(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Vellutata-di-fave-e-piselli";
+	}
+	@GetMapping("/Pasta-con-zucca-e-salsiccia")
+	public String ricetta12(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Pasta-con-zucca-e-salsiccia";
+	}
+	@GetMapping("/Pasta-al-burro-e-limone")
+	public String ricetta13(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "Pasta-al-burro-e-limone";
+	}
 	@GetMapping("/home")
-	public String home(Model model) {
+	public String home(Model model) { 
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
 		return "index";
 	}
-	@GetMapping("/research")
-	public String research(Model model) {
-		String title = "Cerca per Ingrediente";
-		model.addAttribute("message", title);
-		return "researchingrediente";
-	}
+	
 	@PostMapping("/result")
 	public String result(HttpServletRequest request, Model model) {
 		String title = "Cerca Ricette";
 		model.addAttribute("message", title);
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
 		String nomeing = request.getParameter("nomeing");
 		String int1 = null;
 		String int2 = null;

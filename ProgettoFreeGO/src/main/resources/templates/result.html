@@ -12,6 +12,17 @@
 </head>
 
 <body>
+	<nav>
+	<div th:if="${condizione1}">
+		<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1}" th:if="${condizione2}">
+		<div th:replace="fragments/navbarutente.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1 or condizione2}">
+		<div th:replace="fragments/navgeneral.html :: a-navbar"></div>
+	</div>
+	</nav>
   <div class="card" th:each="a : ${result}" style="width: 18rem;">
   <img class="card-img-top" th:src="@{/images/immaginiricette/{zimmagine}(zimmagine=${a.zimmagine})}" alt="Card image cap">
   <div class="card-body" >

@@ -13,12 +13,12 @@ import it.jaita88.models.Intolleranza;
 import it.jaita88.services.IntolleranzaService;
 
 @Controller
-@RequestMapping("/admin")
+
 public class IntolleranzaController {
 	@Autowired
 	IntolleranzaService service;
 
-	@GetMapping("/addintolleranzainizio")
+	@GetMapping("/admin/addintolleranzainizio")
 	public String addIntolleranzaForm(Model model) {
 		String title = "Aggiungi Intolleranza al Database";
 		model.addAttribute("message", title);
@@ -26,20 +26,20 @@ public class IntolleranzaController {
 		return "formaddintolleranza";
 	}
 
-	@PostMapping("/addIntolleranza")
+	@PostMapping("/admin/addIntolleranza")
 	public String addIntolleranza(@ModelAttribute("intolleranza") Intolleranza intolleranza, Model model) {
 		service.addIntolleranza(intolleranza);
 		return "gestioneadmin";
 	}
 
-	@GetMapping("/updateintolleranzainizio")
+	@GetMapping("/admin/updateintolleranzainizio")
 	public String showUpdateIntolleranzaForm(Model model) {
 		String title = "Aggiorna Intolleranza";
 		model.addAttribute("message", title);
 		return "formupdateintolleranza";
 	}
 
-	@GetMapping("/showIntolleranzaById")
+	@GetMapping("/admin/showIntolleranzaById")
 	public String showIntolleranzaById(@RequestParam("id") Integer id, Model model) {
 		Intolleranza i = service.findIntolleranzaById(id);
 		String title = "Aggiorna Intolleranza";
@@ -48,20 +48,20 @@ public class IntolleranzaController {
 		return "formupdateintolleranza2";
 	}
 
-	@PostMapping("/updateIntolleranza")
+	@PostMapping("/admin/updateIntolleranza")
 	public String updateIntolleranza(@ModelAttribute("ricetta") Intolleranza intolleranza, Model model) {
 		service.updateIntolleranza(intolleranza, Integer.valueOf(intolleranza.getId()));
 		return "gestioneadmin";
 	}
 
-	@GetMapping("/deleteintolleranzainizio")
+	@GetMapping("/admin/deleteintolleranzainizio")
 	public String showDeleteIntolleranzaForm(Model model) {
 		String title = "Cancella Intolleranza";
 		model.addAttribute("message", title);
 		return "formdeleteintolleranza";
 	}
 
-	@PostMapping("/deleteIntolleranza")
+	@PostMapping("/admin/deleteIntolleranza")
 	public String deleteIntolleranza(@ModelAttribute("id") Integer id, Model model) {
 		service.deleteIntolleranzaById(id);
 		return "gestioneadmin";

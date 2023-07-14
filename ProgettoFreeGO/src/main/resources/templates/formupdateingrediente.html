@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+	<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
     <div class="container">
         <h1 th:text="${message}"></h1>
         <form action="#" method="get" th:action="@{showIngredienteById}" th:object="${id}">

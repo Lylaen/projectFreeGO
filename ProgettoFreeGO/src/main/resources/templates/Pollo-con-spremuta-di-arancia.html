@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pollo all'arancia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <style>
+    
+
+
+#titolo {
+    text-align: center;
+    margin-top: 50px;
+
+}
+#h1 {
+    font-size:400% ;
+    margin: auto;
+    font-style: italic;
+    color: #f49f09;
+    
+
+
+}
+
+#container {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 50px;
+    box-sizing: border-box;
+}
+#immagine {
+    max-height: 500px;
+}
+
+
+#Image {
+    text-align: center;
+      max-width: 100%;
+      max-height: 800px; 
+      width: auto;
+      height: auto;
+      margin-top: 7%;
+  }
+
+
+#Descrizione {
+  font-style:normal;
+  text-align: justify;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 130%;
+  padding: 1.5rem;
+  margin-right: 8%;
+  
+  
+}
+#due {
+   text-align: center;
+   margin-left: 50%;
+}
+#tre {
+    margin-right: 5%;
+}
+
+
+#quattro {
+    margin-top: 20%;
+}
+.table {
+    font-size: 100%;
+    padding:0%;
+    background-color: #f49f09;
+    
+}
+.Ingredienti {
+    padding: 0%;
+    margin: auto;
+color: #f49f09;
+text-align: center;
+font-size: 100%;
+}
+#preparazione { 
+    text-align: justify;
+    font-size: 120%;
+justify-content: left;
+margin-top: 2%;
+margin-left: 20%;
+font-style: normal;
+
+
+}
+.preparazione {
+    text-align: justify;
+    margin-top: 8%;
+    font-size: 200%;
+    font-style: normal;
+}
+/* .text-center{
+    font-style: italic;
+} */
+.ESECUZIONE {
+    color: #f49f09;
+    margin-top: 25%;
+    font-size: 100%;
+    padding: auto;
+}
+  
+.table-container {
+      margin-top: 50px; 
+    }
+    
+    .table-container .table {
+      margin-bottom: 0; 
+    }
+
+h2 {
+    font-style: italic;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+  <nav>
+	<div th:if="${condizione1}">
+		<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1}" th:if="${condizione2}">
+		<div th:replace="fragments/navbarutente.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1 or condizione2}">
+		<div th:replace="fragments/navgeneral.html :: a-navbar"></div>
+	</div>
+	</nav>
+  <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100 py-5">
+    <div id="titolo" class="text-center">
+        <h1 id="h1">Pollo all'arancia</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-6 my-3">
+            <div id="Descrizione">
+                <h2 class="text-center">Descrizione</h2>
+                <p class="p">La ricetta del Pollo all'arancia è semplice e veloce, in pochi minuti potrete servire questo sfizioso secondo piatto di carne bianca al profumo d'arancia.Nel pollo all'arancia, la cottura in padella con succo d’arance bionde vi farà ottenere una carne morbida, leggermente dorata all'esterno grazie a una veloce rosolatura iniziale.
+                </p>
+                <div class="row d-flex">
+                    <div class="col  border border-dark" style="text-align: center;">
+
+                        <h4>&#x23F0; Tempo  20m</h4>
+                       
+                    </div>
+                    <div class="col  border  border-dark" style="text-align: center;">
+                        <h4>&#x1F525; Cottura  30m</h4>
+                        
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+      <div id="immagine" class="col-lg-6 my-3">
+        <img id="Image" class="img-fluid mx-auto " src="Pollo-all-arancia-1200x675.jpe" style="max-height: 500px;">
+      </div>
+      
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+            <div class="Ingredienti">
+              <h3 class="text-center">Ingredienti</h3>
+              <table id="tabella" class="table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr>
+                    <td>6</td>
+                    <td>Sovracosce di pollo</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>arance bionde</td>
+                  </tr>
+                  <tr>
+                    <td>qb</td>
+                    <td>Farina</td>
+                  </tr>
+                  <tr>
+                    <td>1/2 bicchiere</td>
+                    <td>Vino bianco</td>
+                  </tr>
+                  <tr>
+                    <td>qb</td>
+                    <td> Sale</td>
+                  </tr>
+                 
+                 
+                </tbody>
+              </table>
+                                  <!--  fine tabella Tabella degli ingredienti -->
+
+          
+              
+            </div>
+          </div>
+
+
+
+      <div class="col-lg-6">
+        <h2 class="text-center">Preparazione</h2>
+        <div id="preparazione">
+          <ul>
+            <li> La preparazione del pollo all’arancia è molto rapida. Iniziate mondando le arance, ricavatene la scorza e il succo. Trasferite le sovracosce di pollo in una ciotola colma di farina e infarinatele con cura da tutti i lati. </li> <br>
+           
+            <li>Fate rosolare il pollo in una padella con 4 cucchiai d'olio e, una volta dorato, sfumate con il vino bianco. Quando l’alcool sarà evaporato, aggiungete metà del succo di arancia e fate cuocere a fuoco medio per circa 30 minuti avendo cura di girare ogni tanto le sovracosce di pollo. Aggiustate di sale e pepe. </li> <br>
+
+            <li> Una volta pronto, ritirate il pollo e unite al fondo di cottura della padella il restante succo di arancia e un cucchiaio di farina. Mescolate velocemente e lasciate addensare. Rimettete il pollo in padella e fate insaporire a fuoco spento. Guarnite il pollo all’arancia con la scorza di arancia grattugiata e servite caldo. </li> <br>
+            
+        </ul>
+        </div>
+      </div> 
+     
+    </div>
+  </div>
+  <footer>
+    <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+            <!-- Left -->
+            <div class="me-5">
+                <span>Connetiti con noi</span>
+            </div>
+            <!-- Left -->
+    
+            <!-- Right -->
+            <div>
+                <a href=" #" class="text-white me-4">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="bi bi-google"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="#" class="text-white me-4">
+                    <i class="bi bi-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+    
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <img src="logo3.png" alt="" style="width:50%;">
+                        <h6 class="text-uppercase fw-bold">Free-Go</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            Dove non riesce un libro, il frigo può!
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+    
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Products</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            <a href="#!" class="text-white " style="color:black">Su di noi</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Ricette</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">News</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Video</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+    
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold">Useful links</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p>
+                            <a href="#!" class="text-white">Accedi al tuo account</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Uniscti a noi</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Alex Peluso</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Aiuto</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+    
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <div class="row justify-content-center">
+                            
+                                <h6 class="text-uppercase fw-bold d-flex d-inline-block">Iscriviti alla nostra newsletter</h6>
+                            
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto "
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <form>
+                                <div class="form-group mb-4">
+                                    <input type="email" class="form-control"
+                                        placeholder="Inserisci il tuo indirizzo email" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Iscriviti</button>
+                                </div>
+                            </form>
+    
+                        </div>
+                    </div>
+    
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2023 Copyright: Free-Go
+    
+        </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

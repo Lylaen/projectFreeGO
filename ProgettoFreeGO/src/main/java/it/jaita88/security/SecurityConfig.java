@@ -39,7 +39,7 @@ public class SecurityConfig {
 		.authorizeHttpRequests(authorize -> authorize
 				
 				.requestMatchers("/**").permitAll()
-				.anyRequest().authenticated()
+				.anyRequest().fullyAuthenticated()
 				)
 		.formLogin(form -> form
 				.loginPage("/login")

@@ -34,6 +34,10 @@ public class UtenteController {
 	@GetMapping("/login")
 	public String showLoginForm(Model model) {
 		String title = "Please Login";
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
 		model.addAttribute("message", title);
 		model.addAttribute("utenteLogin", new UtenteLoginDto());
 		return "loginForm";
@@ -41,6 +45,10 @@ public class UtenteController {
 	@PostMapping("/loginUtente")
 	public String processLoginUtente(@ModelAttribute("utenteLogin") UtenteLoginDto utenteLogin, Model model) {
 		// invocazione del servizio
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
 		boolean isAuth = authService.authenticate(utenteLogin.getUsername(), utenteLogin.getPassword());
 		System.err.println(isAuth);
 		if (isAuth) {	
@@ -63,12 +71,20 @@ public class UtenteController {
 	public String showSignupForm(Model model) {
 		String title = "Please Signup";
 		model.addAttribute("message", title);
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
 		model.addAttribute("utenteSignup", new UtenteSignup());
 		return "signupForm";
 	}
 	
 	@PostMapping("/signupUtente")
 	public String processSignupUtente(@ModelAttribute("utenteSignup") UtenteSignup utenteSignup, Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
 		UtenteLogin login = new UtenteLogin();
 		UtenteAnagrafica anag = new UtenteAnagrafica();
 		login.setUsername(utenteSignup.getUsername());

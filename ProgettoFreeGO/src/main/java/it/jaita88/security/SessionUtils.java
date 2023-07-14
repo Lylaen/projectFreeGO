@@ -26,11 +26,13 @@ public class SessionUtils {
 		ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
 		HttpSession session= attr.getRequest().getSession();
 		Set<GrantedAuthority> grantedAuthorities = (Set<GrantedAuthority>) session.getAttribute("ruoli");
-		List<GrantedAuthority> ruoli = new ArrayList<>(grantedAuthorities);
 		List<String> nomiRuoli = new ArrayList<>();
-		for (int i = 0; i < ruoli.size(); i++) {
-			nomiRuoli.add(ruoli.get(i).toString());
-		}	
+		if(grantedAuthorities != null) {
+			List<GrantedAuthority> ruoli = new ArrayList<>(grantedAuthorities);			
+			for (int i = 0; i < ruoli.size(); i++) {
+				nomiRuoli.add(ruoli.get(i).toString());
+			}	
+		}		
 		return nomiRuoli;
 	}
 	public static String getUserUsername() {
@@ -46,21 +48,27 @@ public class SessionUtils {
 		session.setAttribute("ruoli", user.getAuthorities());
 	}
 	public static boolean isAdmin() {
-		for (String r: getUserRoles()) {
-			if (r.equals("ROLE_ADMIN")) {
-				return true;
+		if(getUserRoles()!= null) {
+			for (String r: getUserRoles()) {
+				if (r.equals("ROLE_ADMIN")) {
+					return true;
+				}
 			}
+			return false;
 		}
 		return false;
 	}
 	
 	public static boolean isUser() {
+		if(getUserRoles()!= null) {
 		for (String r: getUserRoles()) {
 			if (r.equals("ROLE_USER")) {
 				return true;
 			}
 		}
 		return false;	
+	}
+		return false;
 	}
 	public static void invalidateSession() {
 		// Invalida la sessione

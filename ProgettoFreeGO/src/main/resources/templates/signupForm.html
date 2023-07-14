@@ -17,8 +17,17 @@
 
 <body>
 
-    <!-- HEADER-->
-    <div th:replace="~{layouts/commonHeader :: header}"></div> <!-- tilde: alt+126 -->
+   <nav>
+	<div th:if="${condizione1}">
+		<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1}" th:if="${condizione2}">
+		<div th:replace="fragments/navbarutente.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1 or condizione2}">
+		<div th:replace="fragments/navgeneral.html :: a-navbar"></div>
+	</div>
+	</nav>
 
     <!-- CONTENT-->
     <div class="container mt-5 vh-100">
@@ -65,8 +74,7 @@
         </div>
     </div>
 
-    <!-- FOOTER-->
-    <div th:replace="~{layouts/commonFooter :: footer}"></div>
+    
 
 </body>
 

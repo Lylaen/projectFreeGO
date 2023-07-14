@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pancake alla banana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        #titolo {
+            text-align: center;
+            margin-top: 50px;
+
+        }
+
+        #h1 {
+            font-size: 400%;
+            margin: auto;
+            font-style: italic;
+            color: #f49f09;
+
+
+
+        }
+
+        #container {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        #immagine {
+            max-height: 500px;
+        }
+
+
+        #Image {
+            text-align: center;
+            max-width: 100%;
+            max-height: 800px;
+            width: auto;
+            height: auto;
+            margin-top: 7%;
+        }
+
+
+        #Descrizione {
+            font-style: normal;
+            text-align: justify;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            font-size: 130%;
+            padding: 1.5rem;
+            margin-right: 8%;
+
+
+        }
+
+        #due {
+            text-align: center;
+            margin-left: 50%;
+        }
+
+        #tre {
+            margin-right: 5%;
+        }
+
+
+        #quattro {
+            margin-top: 20%;
+        }
+
+        .table {
+            font-size: 100%;
+            padding: 0%;
+            background-color: #f49f09;
+
+        }
+
+        .Ingredienti {
+            padding: 0%;
+            margin: auto;
+            color: #f49f09;
+            text-align: center;
+            font-size: 100%;
+        }
+
+        #preparazione {
+            text-align: justify;
+            font-size: 120%;
+            justify-content: left;
+            margin-top: 2%;
+            margin-left: 20%;
+            font-style: normal;
+
+
+        }
+
+        .preparazione {
+            text-align:center ;
+            margin-top: 8%;
+            font-size: 200%;
+            font-style: normal;
+        }
+/* 
+        .text-center {
+            font-style: italic;
+        } */
+
+        .ESECUZIONE {
+            color: #f49f09;
+            margin-top: 25%;
+            font-size: 100%;
+            padding: auto;
+        }
+
+        .table-container {
+            margin-top: 50px;
+        }
+
+        .table-container .table {
+            margin-bottom: 0;
+        }
+        h2 {
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+	<div th:if="${condizione1}">
+		<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1}" th:if="${condizione2}">
+		<div th:replace="fragments/navbarutente.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1 or condizione2}">
+		<div th:replace="fragments/navgeneral.html :: a-navbar"></div>
+	</div>
+	</nav>
+    <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100 py-5">
+        <div id="titolo" class="text-center">
+            <h1 id="h1">Pancake alla banana</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 my-3">
+                <div id="Descrizione">
+                    <h2 class="text-center">Descrizione</h2>
+                    <p class="p">E’ il giorno perfetto per concedersi una colazione golosa con degli sfiziosi pancake
+                        alla banana! Le frittelle più famose d’America hanno conquistato tutto il mondo. Oltre a essere
+                        squisiti, appetitosi e invitanti , sono anche un'ottima soluzione per utilizzare quelle banane
+                        troppo mature che giorno dopo giorno vedete annerire nel cesto della frutta.</p>
+                    <div class="row d-flex">
+                        <div class="col  border border-dark" style="text-align: center; ">
+
+                            <h4> &#x23F0; Tempo  25m</h4>
+                           
+                        </div>
+                        <div class="col  border  border-dark" style="text-align: center;">
+                            <h4>&#x1F525; Cottura  10m</h4>
+                            
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="immagine" class="col-lg-6 my-3">
+                <img id="Image" class="img-fluid mx-auto " src="pancake-alla-banana-still-life-1200x675.avif"
+                    style="max-height: 500px;">
+            </div>
+
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="Ingredienti">
+                    <h3 class="text-center">Ingredienti</h3>
+                    <table id="tabella" class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> 140 g </td>
+                                <td>Banane(polpa di banane)</td>
+                            </tr>
+                            <tr>
+                                <td>250g</td>
+                                <td>Farina 00</td>
+                            </tr>
+                            <tr>
+                                <td>250 g</td>
+                                <td>Latte intero</td>
+                            </tr>
+                            <tr>
+                                <td>80 g</td>
+                                <td>Nocciole</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Uova</td>
+                            </tr>
+                            <tr>
+                                <td>1 pizzico</td>
+                                <td>Sale</td>
+                            </tr>
+                            <tr>
+                                <td> 15 g</td>
+                                <td>Burro</td>
+                            </tr>
+                            <tr>
+                                <td> 1 cucchiaino</td>
+                                <td>Bicarbonato</td>
+                            </tr>
+                            <tr>
+                                <td> q.b</td>
+                                <td>Sciroppo di acero</td>
+                            </tr>
+                            <tr>
+                                <td>q.b</td>
+                                <td>Granella di nocciole</td>
+                            </tr>
+                            <tr>
+                                <td> fettine per decorare</td>
+                                <td>Banane</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--  fine tabella Tabella degli ingredienti -->
+
+                    <div class="col-lg-4">
+
+                    </div>
+                </div>
+              
+            </div>
+
+
+
+            <div class="col-lg-6">
+                <h2 class="text-center">Preparazione</h2>
+                <div id="preparazione">
+                    <ul>
+                        <li>  Per realizzare i pancake alla banana per prima cosa sciogliete il burro in un pentolino 
+                            in microonde e lasciatelo raffreddare, sbucciate le banane che devono essere ben mature,
+                            tagliate la polpa a pezzettini e ponetele in una ciotola (ne dovrete utilizzare 140 g),
+                            quindi schiacciate la polpa con la forchetta per ottenere una purea.</li><br>
+                        <li> Unite l'uovo, il latte , il burro fuso lasciato intiepidire e mescolate il composto con
+                            una forchetta . Amalgamate bene i liquidi e tenete da parte.In un’altra ciotola versate la
+                            farina, lo zucchero , il bicarbonato e un pizzico di sale. Versate i liquidi sulle polveri e
+                            mescolate bene con una frusta</li><br>
+                        <li> Per ottenere una pastella omogenea e senza grumi tritate grossolanamente le nocciole e
+                            tenetele da parte. Non serve il tempo di riposo per la pastella quindi si può passare alla
+                            cottura: prendete una padella ampia antiaderente o una crepiera e accendete il fuoco medio.
+                            Quindi ungete leggermente con il burro, spargendolo sul fondo della padella con l'aiuto di
+                            carta da cucina . </li><br>
+                        <li> Quando sarà ben calda, prendete un mestolo di impasto e versatelo in padella, senza
+                            spargere il composto . Cospargete la superficie con delle nocciole tritate e cuocete per 2-3
+                            minuti: quando la spatola si infilerà comodamente sotto il pancake sarà segno che si potrà
+                            girare e cuocerlo dall'altro lato per altri 2 minuti circa, fino a quando non sarà dorato in
+                            superficie .Man a mano che li re sono pronti, impilateli su un piattino ; con queste dosi ne
+                            otterrete 10 circa. Insaporiteli con lo sciroppo d’acero e guarniteli a piacere con fettine
+                            di banana e le nocciole rimaste </li><br>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+                <!-- Left -->
+                <div class="me-5">
+                    <span>Connetiti con noi</span>
+                </div>
+                <!-- Left -->
+        
+                <!-- Right -->
+                <div>
+                    <a href=" #" class="text-white me-4">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="text-white me-4">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="#" class="text-white me-4">
+                        <i class="bi bi-google"></i>
+                    </a>
+                    <a href="#" class="text-white me-4">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="text-white me-4">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-white me-4">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+        
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <img src="logo3.png" alt="" style="width:50%;">
+                            <h6 class="text-uppercase fw-bold">Free-Go</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p>
+                                Dove non riesce un libro, il frigo può!
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+        
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold">Products</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p>
+                                <a href="#!" class="text-white " style="color:black">Su di noi</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white">Ricette</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white">News</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white">Video</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+        
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold">Useful links</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p>
+                                <a href="#!" class="text-white">Accedi al tuo account</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white">Uniscti a noi</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white">Alex Peluso</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white">Aiuto</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+        
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <div class="row justify-content-center">
+                                
+                                    <h6 class="text-uppercase fw-bold d-flex d-inline-block">Iscriviti alla nostra newsletter</h6>
+                                
+                                <hr class="mb-4 mt-0 d-inline-block mx-auto "
+                                    style="width: 60px; background-color: #7c4dff; height: 2px" />
+                                <form>
+                                    <div class="form-group mb-4">
+                                        <input type="email" class="form-control"
+                                            placeholder="Inserisci il tuo indirizzo email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Iscriviti</button>
+                                    </div>
+                                </form>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+        
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2023 Copyright: Free-Go
+        
+            </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
