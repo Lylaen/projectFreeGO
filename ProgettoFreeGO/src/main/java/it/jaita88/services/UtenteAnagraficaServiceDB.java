@@ -41,7 +41,7 @@ public class UtenteAnagraficaServiceDB implements UtenteAnagraficaService{
 
 	@Override
 	public void addUtenteAnagrafica(UtenteAnagrafica utenteanagrafica) {
-		repository.save(utenteanagrafica);
+		repository.saveAndFlush(utenteanagrafica);
 	}
 
 	

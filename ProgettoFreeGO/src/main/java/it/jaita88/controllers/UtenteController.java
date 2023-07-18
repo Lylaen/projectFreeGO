@@ -96,9 +96,13 @@ public class UtenteController {
 		ruolo.setNome("USER");
 		ruolo.setId(2);
 		login.addRuoli(ruolo);
-		service.addUtenteLogin(login);
+		anag.setUtentelogin(login);
+		login.setUtenteanagrafica(anag);
 		serviceAnagrafica.addUtenteAnagrafica(anag);
-		return "redirect:/login";
+		service.addUtenteLogin(login);
+		
+		
+		return "index";
 	}
 	
 

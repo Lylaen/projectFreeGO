@@ -4,6 +4,8 @@ package it.jaita88.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -38,6 +40,7 @@ public class Ricetta{
 				@JoinColumn(name = "id_ingrediente",
 						referencedColumnName = "id")
 		})
+	@JsonIgnore
 	private List<Ingrediente> ingredientilist = new ArrayList<>();
 	@ManyToMany(mappedBy="preferiti")
 	private List<UtenteLogin> utenti = new ArrayList<>();
@@ -99,7 +102,9 @@ public class Ricetta{
 	public void setIngredientilist(List<Ingrediente> ingredientilist) {
 		this.ingredientilist = ingredientilist;
 	}
-	
+	public void addIngredienti(Ingrediente ingrediente) {
+		ingredientilist.add(ingrediente);
+	}
 	@Override
 	public String toString() {
 		return "Ricetta [id=" + id + ", nome=" + nome + ", tempo=" + tempo + ", zimmagine=" + zimmagine + "]";

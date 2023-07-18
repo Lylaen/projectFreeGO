@@ -4,6 +4,8 @@ package it.jaita88.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,6 +28,7 @@ public class Ingrediente{
 	@Column(name = "nome")
 	private String nome;
 	@ManyToMany(mappedBy = "ingredientilist")
+	@JsonIgnore
 	private List<Ricetta> ricette = new ArrayList<>();
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)

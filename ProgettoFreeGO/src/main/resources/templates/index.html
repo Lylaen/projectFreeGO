@@ -16,6 +16,7 @@
 </head>
 
 <body>
+	<!-- NAVBAR DA COPIARE NELLE PAGINE HTML NUOVE - INIZIO -->
 	<nav>
 	<div th:if="${condizione1}">
 		<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
@@ -26,7 +27,8 @@
 	<div th:unless="${condizione1 or condizione2}">
 		<div th:replace="fragments/navgeneral.html :: a-navbar"></div>
 	</div>
-	</nav>
+	</nav>	
+	<!-- NAVBAR FINE COPIA -->
 	<header>
 		
 			<div class="container-fluid sear d-flex flex-sm-wrap ">

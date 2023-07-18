@@ -1,17 +1,23 @@
 package it.jaita88.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.jaita88.models.Ricetta;
 import it.jaita88.models.UtenteLogin;
 import it.jaita88.repositories.UtenteLoginRepository;
+import it.jaita88.security.SessionUtils;
 
 @Service
 public class UtenteLoginServiceDB implements UtenteLoginService{
 
-	@Autowired UtenteLoginRepository repository;
+	@Autowired 
+	UtenteLoginRepository repository;
+	@Autowired
+	RicettaService service;
 	@Override
 	public List<UtenteLogin> findAllUtenteLogin() {
 		return (List<UtenteLogin>) repository.findAll();
@@ -39,8 +45,19 @@ public class UtenteLoginServiceDB implements UtenteLoginService{
 
 	@Override
 	public void addUtenteLogin(UtenteLogin utentelogin) {
-		repository.save(utentelogin);
+		repository.saveAndFlush(utentelogin);	
+	}
+
+	@Override
+	public List<Ricetta> findPreferiti(String username) {
 		
+		List<Object> res = repository.findPreferiti(username);
+		List<Ricetta> preferiti = new ArrayList<>();
+		for(int j = 0; j < res.size(); j++) {
+			Ricetta ricetta = service.findRicettaById((Integer) res.get(j));
+			preferiti.add(ricetta);
+		}	
+		return preferiti;
 	}
 
 	

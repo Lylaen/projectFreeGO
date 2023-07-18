@@ -1,24 +1,34 @@
 package it.jaita88.controllers;
 
-import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import it.jaita88.models.Ricetta;
+import it.jaita88.models.UtenteLogin;
+import it.jaita88.repositories.RicettaRepository;
+import it.jaita88.repositories.UtenteLoginRepository;
 import it.jaita88.security.SessionUtils;
 import it.jaita88.services.IngredienteService;
+import it.jaita88.services.RicettaService;
 import it.jaita88.services.RicetteIngredientiService;
+import it.jaita88.services.UtenteLoginService;
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class PageController {
+	@Autowired
+	RicettaRepository repository;
+	@Autowired
+	RicettaService serviceric;
+	@Autowired 
+	UtenteLoginRepository userRepository;
+	@Autowired
+	UtenteLoginService serviceutente;
 	@Autowired 
 	IngredienteService service;
 	@Autowired
@@ -76,6 +86,8 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		//utenteLoggato.addRicetta(null)
 		return "PastaPatate";
 	}
 	@GetMapping("/Frittata-farcita-con-prosciutto-e-mozzarella")
@@ -290,5 +302,16 @@ public class PageController {
 		}
 		model.addAttribute("result", result);
 		return "result";
+	}
+	@GetMapping("/preferiti")
+	public String showPreferiti(String username, Model model) {
+		username = SessionUtils.getUserUsername();
+		List<Ricetta> preferiti = serviceutente.findPreferiti(username);
+		model.addAttribute("preferiti", preferiti);
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "preferiti";
 	}
 	}

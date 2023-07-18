@@ -10,4 +10,5 @@ public interface RicettaService {
 	void deleteRicettaById(Integer id);
 	void updateRicetta(Ricetta ricetta, Integer id);
 	void addRicetta(Ricetta ricetta);
+	
 }

@@ -57,7 +57,7 @@ public class UtenteLogin implements Serializable {
 	})
 	private Set<Ruolo> ruoli = new HashSet<>();
 	
-	@OneToOne(mappedBy="login", cascade = CascadeType.MERGE)
+	@OneToOne(mappedBy="login", cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 	private UtenteAnagrafica utenteanagrafica;
 	
@@ -109,6 +109,11 @@ public class UtenteLogin implements Serializable {
 
 	public void setRuoli(Set<Ruolo> ruoli) {
 		this.ruoli = ruoli;
+	}
+
+	@Override
+	public String toString() {
+		return "UtenteLogin [username=" + username + ", password=" + password + "]";
 	}
 	
 	
