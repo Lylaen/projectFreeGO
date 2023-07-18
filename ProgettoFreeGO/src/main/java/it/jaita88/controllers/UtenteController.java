@@ -66,7 +66,70 @@ public class UtenteController {
 			return "loginForm";
 		}
 	}
-	
+	@GetMapping("/showPwForm") 
+	public String showPwForm(Model model) {
+		String title = "Cambia Password";
+		model.addAttribute("message", title);
+		UtenteLoginDto utentedto = new UtenteLoginDto();
+		model.addAttribute("utentedto", utentedto);
+		return "formpw";
+	}
+	@PostMapping("/modificaPassword")
+	public String modificaPassword(@ModelAttribute("utentedto") UtenteLoginDto utentedto, Model model) {
+		String username = SessionUtils.getUserUsername();
+		UtenteLogin utente = service.findUtenteLoginById(username);
+		String password = passwordEncoder.encode(utentedto.getPassword());
+		service.updateUtenteLogin(utente, password);
+		return "gestioneutente";
+	}
+	@GetMapping("/showNomeForm")
+	public String showNomeForm(Model model) {
+		String title = "Cambia Nome";
+		model.addAttribute("message", title);
+		UtenteSignup utentedto = new UtenteSignup();
+		model.addAttribute("utentedto", utentedto);
+		return "formnome";
+	}
+	@PostMapping("/modificaNome")
+	public String modificaNome(@ModelAttribute("utentedto") UtenteSignup utentedto, Model model) {
+		String username = SessionUtils.getUserUsername();
+		UtenteAnagrafica newutente = new UtenteAnagrafica();
+		newutente.setNome(utentedto.getNome());
+		serviceAnagrafica.updateUtenteAnagrafica(newutente, username);
+		return "gestioneutente";
+	}
+	@GetMapping("/showCognomeForm")
+	public String showCognomeForm(Model model) {
+		String title = "Cambia Cognome";
+		model.addAttribute("message", title);
+		UtenteSignup utentedto = new UtenteSignup();
+		model.addAttribute("utentedto", utentedto);
+		return "formcognome";
+	}
+	@PostMapping("/modificaCognome")
+	public String modificaCognome(@ModelAttribute("utentedto") UtenteSignup utentedto, Model model) {
+		String username = SessionUtils.getUserUsername();
+		UtenteAnagrafica newutente = new UtenteAnagrafica();		
+		newutente.setCognome(utentedto.getCognome());		
+		serviceAnagrafica.updateUtenteAnagrafica(newutente, username);
+		return "gestioneutente";
+	}
+	@GetMapping("/showEmailForm")
+	public String showEmailForm(Model model) {
+		String title = "Cambia Cognome";
+		model.addAttribute("message", title);
+		UtenteSignup utentedto = new UtenteSignup();
+		model.addAttribute("utentedto", utentedto);
+		return "formcognome";
+	}
+	@PostMapping("/modificaEmail")
+	public String modificaEmail(@ModelAttribute("utentedto") UtenteSignup utentedto, Model model) {
+		String username = SessionUtils.getUserUsername();
+		UtenteAnagrafica newutente = new UtenteAnagrafica();		
+		newutente.setEmail(utentedto.getEmail());		
+		serviceAnagrafica.updateUtenteAnagrafica(newutente, username);
+		return "gestioneutente";
+	}
 	@GetMapping("/signup")
 	public String showSignupForm(Model model) {
 		String title = "Please Signup";

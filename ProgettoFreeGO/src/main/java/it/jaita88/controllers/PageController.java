@@ -80,6 +80,13 @@ public class PageController {
 		}
 		return "error";
 	}
+	@GetMapping("/gestioneutente")
+	public String gestioneUtente(Model model) {
+		if(SessionUtils.isUser()) {
+			return "gestioneutente";
+		}
+		return "error";
+	}
 	@GetMapping("/Pasta-con-patate-alla-napoletana")
 	public String ricetta1(Model model) {
 		boolean condizione1 = SessionUtils.isAdmin();
