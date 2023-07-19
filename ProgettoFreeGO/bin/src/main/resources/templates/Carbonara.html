@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>pagina Carbonara</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		#titolo {
+			text-align: center;
+			margin-top: 50px;
+
+		}
+
+		#h1 {
+			font-size: 400%;
+			margin: auto;
+			font-style: italic;
+			color: #f49f09;
+
+
+
+		}
+
+		#container {
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			padding: 50px;
+			box-sizing: border-box;
+		}
+
+		#Image {
+			text-align: center;
+			margin-left: 28%;
+
+
+		}
+
+
+		#Descrizione {
+			font-style: normal;
+			text-align: justify;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			font-size: 130%;
+			padding: 1.5rem;
+			margin-right: 8%;
+
+
+		}
+
+		#due {
+			text-align: center;
+			margin-left: 50%;
+		}
+
+		#tre {
+			margin-right: 5%;
+		}
+
+
+		#quattro {
+			margin-top: 20%;
+		}
+
+		.table {
+			font-size: 100%;
+			padding: 0%;
+			background-color: #f49f09;
+
+		}
+
+		.Ingredienti {
+			padding: 0%;
+			margin: auto;
+			color: #f49f09;
+			text-align: center;
+			font-size: 100%;
+		}
+
+		#preparazione {
+			text-align: justify;
+			font-size: 100%;
+			justify-content: left;
+			margin-top: 2%;
+			margin-left: 20%;
+
+
+		}
+
+		.preparazione {
+			text-align: center;
+			margin-top: 8%;
+			font-size: 200%;
+		}
+
+		.text-center {
+			font-style: italic;
+		}
+	</style>
+</head>
+
+<body>
+	<nav>
+		<div th:if="${condizione1}">
+			<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
+		</div>
+		<div th:unless="${condizione1}" th:if="${condizione2}">
+			<div th:replace="fragments/navbarutente.html :: a-navbar"></div>
+		</div>
+		<div th:unless="${condizione1 or condizione2}">
+			<div th:replace="fragments/navgeneral.html :: a-navbar"></div>
+		</div>
+	</nav>
+	<div class="container d-flex flex-column align-items-center justify-content-center min-vh-100 py-5">
+		<div id="titolo" class="text-center">
+			<h1 id="h1">Carbonara</h1>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-lg-6 my-3">
+				<button type="button" onclick="salvaPreferito(5)">Aggiungi ai preferiti</button>
+				<div id="Descrizione">
+					<h2 class="text-center">Descrizione</h2>
+					<p class="p">Gli spaghetti alla carbonara sono un grande classico della cucina italiana. Una ricetta
+						che mette tutti d'accordo nel momento in cui la si celebra e che invece divide quando si tratta
+						di prepararla.
+						Basta vedere in rete: chef famosi (e non) propongono la loro variante, così come in tanti ne
+						hanno una propria
+						versione, magari tramandata in famiglia.</p>
+				</div>
+			</div>
+			<div id="immagine" class="col-lg-6 my-3">
+				<img id="Image" class="img-fluid mx-auto d-block" src="carbonara.jpg">
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-lg-4">
+				<div class="Ingredienti">
+					<h3 class="text-center">Ingredienti</h3>
+					<table id="tabella" class="table">
+						<thead>
+							<tr>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>300 gr</td>
+								<td>Guanciale</td>
+							</tr>
+							<tr>
+								<td>400 gr</td>
+								<td>Spaghetti</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Tuorli</td>
+							</tr>
+							<tr>
+								<td>50 gr</td>
+								<td>Pecorino</td>
+							</tr>
+							<tr>
+								<td>100 gr</td>
+								<td>Uova</td>
+							</tr>
+							<tr>
+								<td>Salt</td>
+								<td>Sale</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+
+			<div class="col-lg-6">
+				<h3 class="text-center">Preparazione</h3>
+				<div id="preparazione">
+					<ul>
+						<li> 1 Prima cosa pulite il pezzo di guanciale, eliminando la cotenna. Tagliate a cubetti il
+							pezzo di guanciale e metteteli a rosolare in un'ampia padella. Non serve olio, in quanto il
+							guanciale rilascerà il suo grasso durante la cottura. Una volta che il guanciale ha preso
+							colore spegnete il fuoco e conservate il grasso in eccesso.</li>
+						<li>2 Dedicatevi ora alle uova, di cui userete solo i tuorli: sbatteteli in una boule di metallo
+							con il grasso del guanciale filtrato con un colino. Portate a bollore dell'acqua in una
+							pentola. Appoggiate la ciotola sul bordo della pentola e lavorate i tuorli con una frusta a
+							bagnomaria. Aggiungete il pecorino e continuate a mescolare. Togliete dal fuoco: se vi
+							accorgete che la salsa ottenuta è troppo densa unite qualche cucchiaio di acqua calda, al
+							fine di ottenere un composto lucido e cremoso. </li>
+						<li>3 Lessate gli spaghetti al dente in acqua non troppo salata (il condimento è già molto
+							sapido) e uniteli al guanciale. Fate insaporite per un paio di minuti sul fuoco e trasferite
+							il tutto in una zuppiera capiente. A questo punto aggiungete la crema di tuorli, il pepe
+							nero e amalgamate bene. .</li>
+						<li>4 Porzionate nei piatti da portata e completate con del pecorino e una spolverata di pepe
+							nero. Gli spaghetti alla carbonara sono pronti per essere serviti. </li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<section>
+		<div class="card" th:each="a : ${commentiesistenti}" style="width: 18rem;">  
+  			<div class="card-body" >
+    			<h5 class="card-title" th:text="${a.titolo}"></h5>
+    			<h6 class="card-subtitle mb-2 text-muted" th:text="${a.testo}"></h6>
+    			 
+			</div>
+		</div>
+			<button type="button" class="btn btn-primary" onclick="mostraDiv();">Scrivi un commento!</button>
+			<div id="myDiv" class="hidden">
+				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
+    			<input type="text" th:field="*{titolo}" id="input1">
+    			<input type="text" th:field="*{testo}" id="input2">
+    			<button type="button" onclick="inviaCommento()" class="btn btn-primary">Invia</button>
+    		</form>
+  			</div>
+			</section>
+	<div th:replace="fragments/commonFooter.html :: footer"></div>
+	<script>
+		var endpointUrl = 'http://localhost:8080/Carbonara'
+	</script>
+	<script th:src="@{js/script.js}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

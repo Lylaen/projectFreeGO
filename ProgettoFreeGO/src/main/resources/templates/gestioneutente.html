@@ -194,15 +194,19 @@
       background: #f7f6f8;
     }
 
-    .custom {
-    width: 30vh !important;
-  }
+ .btn2{
+ margin-bottom: 5px !important;
+ margin-left:5px !important;
+ }
+
+
   </style>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
+<div th:replace="fragments/navbarutente.html :: a-navbar"></div>
   <div id="particles-js" class="mb-5">
     <section class="overflow-hidden section1">
       <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
@@ -228,71 +232,43 @@
                   <!-- Email input -->
                   <div class="d-flex justify-content-center justify-item-center">
                     <div class="justify-content-center">
-                      <img src="logo3.png" style="width: auto; height: 55px;" class="mb-5 col-lg-6" alt="" >
+                      <img th:src="@{/images/logo3.png}" class="img1" style="width: auto; height: 55px;" alt="Logo">
                       <div class="d-flex justify-content-center">
-                        <div class="btn-group-vertical" role="group" >
-                          <div class="btn-group" role="group">
-                            <button type="submit" role="button" class="btn btn-warning btn1 rounded-5 custom" aria-expanded="false"
-                              th:href="@{/showPwForm}">
-                              Modifica Password
-                            </button>
-                          </div>
-
-                          <div class="d-flex justify-content-center">
-                            <div class="btn-group-vertical" role="group" >
-                              <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-warning btn1 rounded-5 custom" aria-expanded="false "
-                                  th:href="@{/shownNomeForm}">
-                                  Modifica Nome
-                                </button>
-                              </div>
 
 
 
-                              <div class="d-flex justify-content-center">
-                                <div class="btn-group-vertical" role="group">
-                                  <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-warning btn1 rounded-5 custom"
-                                      data-bs-toggle="dropdown" aria-expanded="false" th:href="@{/showCognomeForm}">
-                                      Modifica Cognome
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
+                        <div class="row d-flex">
 
+                          <button th:href="@{/showPwForm}" type="button" class="btn btn-warning col btn2">Modifica
+                            password
+                          </button>
 
-                              <div class="d-flex justify-content-center">
+                          <button th:href="@{/shownNomeForm}" type="button" class="btn btn-warning col btn2">Modifica Nome
 
-                                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-                                  <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-warning btn1 rounded-5 custom"
-                                      data-bs-toggle="dropdown" aria-expanded="false" th:href="@{/showEmailForm}">
-                                      Modifica Email
-                                    </button>
-                                  </div>
+                          </button>
 
+                          <button th:href="@{/showCognomeForm}" type="button" class="btn btn-warning col btn2">Modifica
+                            Cognome
+                          </button>
 
-
-
-
-
-
-
-
-
-
-                                </div>
-
-                              </div>
-                              <!-- end row -->
-
-                            </div>
-                          </div>
+                          <button th:href="@{/showEmailForm}" type="button" class="btn btn-warning col btn2">Modifica
+                            Email
+                          </button>
                         </div>
                       </div>
                     </div>
-    </section>
+                  </div>
+                </div>
+              </div>
+              <!-- end row -->
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
+
+  </section>
+
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

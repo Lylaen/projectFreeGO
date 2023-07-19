@@ -71,6 +71,19 @@
 </head>
 
 <body>
+
+<nav>
+	<div th:if="${condizione1}">
+		<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1}" th:if="${condizione2}">
+		<div th:replace="fragments/navbarutente.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1 or condizione2}">
+		<div th:replace="fragments/navgeneral.html :: a-navbar"></div>
+	</div>
+	</nav>
+	
   <div class="container my-5">
     <h1 class="text-center">Dessert</h1>
     <div class="row justify-content-center">

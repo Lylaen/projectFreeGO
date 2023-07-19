@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pasta e patate</title>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	 
+	<style>
+		#titolo {
+			text-align: center;
+			margin-top: 50px;
+
+		}
+
+		#h1 {
+			font-size: 400%;
+			margin: auto;
+			font-style: italic;
+			color: #f49f09;
+
+
+
+		}
+	.visible {
+		display: block;
+	}
+    .hidden {
+      display: none;
+    }
+  
+		#container {
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			padding: 50px;
+			box-sizing: border-box;
+		}
+
+		#immagine {
+			max-height: 500px;
+		}
+
+
+		#Image {
+			text-align: center;
+			max-width: 100%;
+			max-height: 800px;
+			width: auto;
+			height: auto;
+			margin-top: 7%;
+		}
+
+
+		#Descrizione {
+			font-style: normal;
+			text-align: justify;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			font-size: 130%;
+			padding: 1.5rem;
+			margin-right: 8%;
+
+
+		}
+
+		#due {
+			text-align: center;
+			margin-left: 50%;
+		}
+
+		#tre {
+			margin-right: 5%;
+		}
+
+
+		#quattro {
+			margin-top: 20%;
+		}
+
+		.table {
+			font-size: 100%;
+			padding: 0%;
+			background-color: #f49f09;
+
+		}
+
+		.Ingredienti {
+			padding: 0%;
+			margin: auto;
+			color: #f49f09;
+			text-align: center;
+			font-size: 100%;
+		}
+
+		#preparazione {
+			text-align: justify;
+			font-size: 120%;
+			justify-content: left;
+			margin-top: 2%;
+			margin-left: 20%;
+			font-style: normal;
+
+
+		}
+
+		.preparazione {
+			text-align: justify;
+			margin-top: 8%;
+			font-size: 200%;
+			font-style: normal;
+		}
+
+		/* .text-center{
+    font-style: italic;
+} */
+		.ESECUZIONE {
+			color: #f49f09;
+			margin-top: 25%;
+			font-size: 100%;
+			padding: auto;
+		}
+
+		.table-container {
+			margin-top: 50px;
+		}
+
+		.table-container .table {
+			margin-bottom: 0;
+		}
+
+		h2 {
+			font-style: italic;
+		}
+	</style>
+	<script th:src="@{js/script.js}" defer></script>
+</head>
+
+<body>
+	<!--navbar-->
+	
+	<nav>
+	<div th:if="${condizione1}">
+		<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1}" th:if="${condizione2}">
+		<div th:replace="fragments/navbarutente.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1 or condizione2}">
+		<div th:replace="fragments/navgeneral.html :: a-navbar"></div>
+	</div>
+	</nav>
+	
+	<div class="container d-flex flex-column align-items-center justify-content-center min-vh-100 py-5">
+		<div id="titolo" class="text-center">
+			<h1 id="h1">Pasta e patate alla napoletana</h1>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-lg-6 my-3">
+				<button type="button" onclick="salvaPreferito(3)">Aggiungi ai preferiti</button>
+				<div id="Descrizione">
+					<h2 class="text-center">Descrizione</h2>
+					<p class="p"> Se non conoscete la pasta e patate alla napoletana oggi vi si aprirà un mondo! Non è
+						un’esagerazione perché si tratta di un piatto che ha sorpreso noi per primi, una ghiotta
+						variante della classica pasta e patate: la sua preparazione, la sua modalità di cottura e, non
+						per ultimo, il suo meraviglioso sapore. </p>
+
+					<div class="row d-flex">
+						<div class="col  border border-dark" style="text-align: center; color: violet;">
+
+							<h4> &#x23F0; Tempo 20m </h4>
+
+						</div>
+						<div class="col  border  border-dark" style="text-align: center;color:violet;">
+							<h4> &#x1F525; Cottura 50m</h4>
+
+
+
+						</div>
+
+					</div>
+				</div>
+				        
+			</div>
+			<div id="immagine" class="col-lg-6 my-3">
+				
+			</div>
+
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-lg-4">
+				<div class="Ingredienti">
+					<h3 class="text-center">Ingredienti</h3>
+					<table id="tabella" class="table">
+						<thead>
+							<tr>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr>
+								<td>320 g</td>
+								<td> Patate</td>
+							</tr>
+							<tr>
+								<td>320g</td>
+								<td>Pasta mista</td>
+							</tr>
+							<tr>
+								<td>150g</td>
+								<td>Sedano</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Cipolle bianche</td>
+							</tr>
+							<tr>
+								<td>qb</td>
+								<td> Sale</td>
+							</tr>
+							<tr>
+								<td> 1 rametto</td>
+								<td> Rosmarino</td>
+							</tr>
+							<td>1 crosta</td>
+							<td> Parmiggiano reggiano</td>
+							</tr>
+							<tr>
+								<td>150 g</td>
+								<td>Carote</td>
+							</tr>
+							<tr>
+								<td>130 g</td>
+								<td> Lardo</td>
+							</tr>
+							<tr>
+								<td>20 g</td>
+								<td> Concentrato di pomodoro</td>
+							</tr>
+							<tr>
+								<td>qb</td>
+								<td> Olio extravergine d'oliva</td>
+							</tr>
+							<tr>
+								<td>qb</td>
+								<td>Pepe nero</td>
+							</tr>
+						</tbody>
+					</table>
+					
+
+
+
+				</div>
+			</div>
+
+
+
+			<div class="col-lg-6">
+				<h2 class="text-center">Preparazione</h2>
+				<div id="preparazione">
+					<ul>
+						<br>
+						<li>Per preparare la pasta e patate alla napoletana cominciate mondando sedano, carota e cipolla
+							e poi sminuzzateli finemente </li></br>
+
+						<br>
+						<li>Poi pulite anche le patate e tagliatele a tocchetti irregolari di circa 2 cm. Infine
+							affettate e poi sminuzzate il lardo. A questo punto avete tutto quello che vi occorre,
+							spostatevi ai fornelli. Mettete sul fuoco una casseruola e un giro d’olio, aggiungete il
+							lardo e lasciatelo scaldare a fuoco dolce per qualche minuto.</li></br>
+
+						<br>
+						<li>Poi tuffate il trito di cipolla, carote e sedano. Dopo qualche minuto unite le patate e
+							lasciatele insaporire per qualche minuto mescolando di tanto in tanto evitando così che
+							bruci il fondo. Aggiungete anche il rosmarino e la crosta di formaggio (prima potete lavarla
+							e grattare la parte esterna) , unite anche il concentrato di pomodoro e mescolate. Versate
+							600 g di acqua calda, aggiustate di pepe e di sale.</li></br>
+						<br>
+						<li>Infine coprite con il coperchio lasciando cuocere a fuoco dolce per 30 minuti; al bisogno
+							potete aggiungere ancora un po’ di acqua. Trascorso il tempo le patate risulteranno
+							ammorbidite, schiacciatene una parte con il dorso del cucchiaio di legno; a questo punto
+							versate la pasta mista.</li></br>
+						<br>
+						<li>Aggiungete subito altri 250 g di acqua calda e portate il tutto a bollore. Lasciate cuocere
+							la pasta mescolando di tanto in tanto: se dovesse servire potrete aggiungere altra acqua al
+							bisogno; assicuratevi che sia giusto di sale.</li></br>
+						<br>
+						<li> A fine cottura però ricordate che il composto dovrà risultare cremoso e quasi asciutto.
+							Quindi eliminate i rametti di rosmarino e impiattate la vostra pasta e patate alla
+							napoletana guarnendo con un giro di olio.</li></br>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<section>
+		<div class="card" th:each="a : ${commentiesistenti}" style="width: 18rem;">  
+  			<div class="card-body" >
+    			<h5 class="card-title" th:text="${a.titolo}"></h5>
+    			<h6 class="card-subtitle mb-2 text-muted" th:text="${a.testo}"></h6>
+    			 
+			</div>
+		</div>
+			<button type="button" class="btn btn-primary" onclick="mostraDiv();">Scrivi un commento!</button>
+			<div id="myDiv" class="hidden">
+				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
+    			<input type="text" th:field="*{titolo}" id="input1">
+    			<input type="text" th:field="*{testo}" id="input2">
+    			<button type="button" onclick="inviaCommento()" class="btn btn-primary">Invia</button>
+    		</form>
+  			</div>
+			</section>
+	<div th:replace="fragments/commonFooter.html :: footer"></div>
+		
+		<script>
+			var endpointUrl = 'http://localhost:8080/Pasta-con-patate-alla-napoletana'
+		</script>
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+			crossorigin="anonymous"></script>
+</body>
+
+</html>

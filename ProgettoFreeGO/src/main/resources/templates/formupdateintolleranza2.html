@@ -172,6 +172,7 @@
 </head>
 
 <body>
+<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
     <div id="particles-js" class="mb-5"></div>
     <section class=" overflow-hidden section1">
         <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
@@ -197,7 +198,8 @@
                                 <!-- Email input -->
                                 <div class="d-flex justify-content-center justify-item-center">
                                     <div>
-                                        <img src="logo.png" style="width: auto; height: 60px;" alt="" class="col-lg-6">
+                                        <<img th:src="@{/images/logo3.png}" class="img1" style="width: auto; height: 55px;" alt="Logo"
+                                        class="col-lg-6">
                                         <div class="d-flex justify-content-cente">
                                             <h1 th:text="${message}" class="mt-3 mb-4"></h1>
                                         </div>

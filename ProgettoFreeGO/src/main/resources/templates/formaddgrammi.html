@@ -23,6 +23,7 @@
 			<!-- Second col -->
 			<div class="col-lg-6">
 				<h1 th:text="${message}" class="mt-3 mb-4"></h1>
+				<img th:src="@{/images/logo3.png}" class="img1" style="width: auto; height: 55px;" alt="Logo">
 
 				<form id="form1" action="#" method="post" th:action="@{addGrammi}" th:object="${ingredienteDto}">
 				<input type="hidden" th:value="${idRicetta}" name="idRicetta" />
