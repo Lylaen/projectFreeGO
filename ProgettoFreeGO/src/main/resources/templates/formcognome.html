@@ -200,13 +200,13 @@
                                             <div class="d-flex justify-content-cente">
                                                 <h1 th:text="${message}" class="mt-3 mb-4"></h1>
                                             </div>
-                                            <form action="#" method="post" th:action="@{modificaNome}"
+                                            <form action="#" method="post" th:action="@{modificaCognome}"
                                                 th:object="${utentedto}">
                                                 <div class="mb-3 col-lg">
                                                     <div style="text-align: center;">
-                                                        <label for="nome" class="form-label">Nuovo Nome</label>
-                                                        <input type="text" class="form-control" id="nome"
-                                                            th:field="*{nome}">
+                                                        <label for="cognome" class="form-label">Nuovo Cognome</label>
+                                                        <input type="text" class="form-control" id="cognome"
+                                                            th:field="*{cognome}" >
                                                     </div>
 
                                                 </div>

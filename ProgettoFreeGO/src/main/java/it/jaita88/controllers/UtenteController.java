@@ -55,15 +55,15 @@ public class UtenteController {
 			//ricerca ruolo da sessione
 			String ruolo = SessionUtils.getUserRole();
 			if (ruolo.equals("ROLE_USER")) {
-				return "redirect:/home";
+				return "index";
 			} else if (ruolo.equals("ROLE_ADMIN")) {
 				return "gestioneadmin";
 			} else {
-				return "error";
+				return "index";
 			}
 		}else {
 			model.addAttribute("utenteLogin", "Utente non esistente");
-			return "loginForm";
+			return "index";
 		}
 	}
 	@GetMapping("/showPwForm") 
@@ -93,7 +93,7 @@ public class UtenteController {
 	@PostMapping("/modificaNome")
 	public String modificaNome(@ModelAttribute("utentedto") UtenteSignup utentedto, Model model) {
 		String username = SessionUtils.getUserUsername();
-		UtenteAnagrafica newutente = new UtenteAnagrafica();
+		UtenteAnagrafica newutente = serviceAnagrafica.findUtenteAnagraficaById(username);
 		newutente.setNome(utentedto.getNome());
 		serviceAnagrafica.updateUtenteAnagrafica(newutente, username);
 		return "gestioneutente";
@@ -109,7 +109,7 @@ public class UtenteController {
 	@PostMapping("/modificaCognome")
 	public String modificaCognome(@ModelAttribute("utentedto") UtenteSignup utentedto, Model model) {
 		String username = SessionUtils.getUserUsername();
-		UtenteAnagrafica newutente = new UtenteAnagrafica();		
+		UtenteAnagrafica newutente = serviceAnagrafica.findUtenteAnagraficaById(username);		
 		newutente.setCognome(utentedto.getCognome());		
 		serviceAnagrafica.updateUtenteAnagrafica(newutente, username);
 		return "gestioneutente";
@@ -120,12 +120,12 @@ public class UtenteController {
 		model.addAttribute("message", title);
 		UtenteSignup utentedto = new UtenteSignup();
 		model.addAttribute("utentedto", utentedto);
-		return "formcognome";
+		return "formemail";
 	}
 	@PostMapping("/modificaEmail")
 	public String modificaEmail(@ModelAttribute("utentedto") UtenteSignup utentedto, Model model) {
 		String username = SessionUtils.getUserUsername();
-		UtenteAnagrafica newutente = new UtenteAnagrafica();		
+		UtenteAnagrafica newutente = serviceAnagrafica.findUtenteAnagraficaById(username);		
 		newutente.setEmail(utentedto.getEmail());		
 		serviceAnagrafica.updateUtenteAnagrafica(newutente, username);
 		return "gestioneutente";
