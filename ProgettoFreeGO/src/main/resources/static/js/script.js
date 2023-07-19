@@ -112,7 +112,11 @@ function mostraDiv() {
       			div.classList.add("visible"); // Rimuove l'attributo hidden per mostrare il div
     		}
 
-
+function chiudiDiv(){
+	var div = document.getElementById("myDiv");
+	div.classList.remove("visible");
+	div.classList.add("hidden");
+}
 
   
 

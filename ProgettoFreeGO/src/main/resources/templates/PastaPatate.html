@@ -187,7 +187,7 @@
 				</div>
 				        
 			</div>
-			<div id="immagine" class="col-lg-6 my-3">
+			 <img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/pastapatate.png}" style="max-height: 300px;border-radius: 9px;">
 				
 			</div>
 
@@ -315,7 +315,7 @@
 				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
     			<input type="text" th:field="*{titolo}" id="input1">
     			<input type="text" th:field="*{testo}" id="input2">
-    			<button type="button" onclick="inviaCommento()" class="btn btn-primary">Invia</button>
+    			<button type="button" onclick="inviaCommento(); chiudiDiv();" class="btn btn-primary">Invia</button>
     		</form>
   			</div>
 			</section>
