@@ -207,6 +207,24 @@
 
 		</div>
 	</div>
+	<section>
+		<div class="card" th:each="a : ${commentiesistenti}" style="width: 18rem;">  
+  			<div class="card-body" >
+    			<h5 class="card-title" th:text="${a.titolo}"></h5>
+    			<h6 class="card-subtitle mb-2 text-muted" th:text="${a.testo}"></h6>
+    			 
+			</div>
+		</div>
+			<button type="button" class="btn btn-primary" onclick="mostraDiv();">Scrivi un commento!</button>
+			<div id="myDiv" class="hidden">
+				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
+    			<input type="text" th:field="*{titolo}" id="input1">
+    			<input type="text" th:field="*{testo}" id="input2">
+    			<button type="button" onclick="inviaCommento()" class="btn btn-primary">Invia</button>
+    		</form>
+  			</div>
+			</section>
+	<div th:replace="fragments/commonFooter.html :: footer"></div>
 	<script>
 		var endpointUrl = 'http://localhost:8080/Carbonara'
 	</script>

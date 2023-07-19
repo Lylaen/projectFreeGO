@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
@@ -60,6 +61,9 @@ public class UtenteLogin implements Serializable {
 	@OneToOne(mappedBy="login", cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 	private UtenteAnagrafica utenteanagrafica;
+	@OneToMany(mappedBy = "utente",
+			fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Comment> commenti = new ArrayList<>();
 	
 	public UtenteLogin() {
 	}

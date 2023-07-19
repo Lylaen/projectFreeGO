@@ -82,7 +82,7 @@ function salvaPreferito(idRicetta) {
 		grammiml: idRicetta,
 	};
 
-	fetch(endpointUrl, {
+	fetch(endpointUrl + "p", {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -90,6 +90,28 @@ function salvaPreferito(idRicetta) {
 		body: JSON.stringify(data)
 	});
 }
+function inviaCommento() {
+	
+	  var valore1 = document.getElementById("input1").value;
+      var valore2 = document.getElementById("input2").value;
+
+      var jsonData = {
+        "titolo": valore1,
+        "testo": valore2
+      };
+	fetch(endpointUrl + "c",  {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(jsonData)
+      })
+}
+function mostraDiv() {
+      		var div = document.getElementById("myDiv");
+      			div.classList.remove("hidden");
+      			div.classList.add("visible"); // Rimuove l'attributo hidden per mostrare il div
+    		}
 
 
 

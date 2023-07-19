@@ -16,6 +16,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -44,6 +45,9 @@ public class Ricetta{
 	private List<Ingrediente> ingredientilist = new ArrayList<>();
 	@ManyToMany(mappedBy="preferiti")
 	private List<UtenteLogin> utenti = new ArrayList<>();
+	@OneToMany(mappedBy = "ricetta",
+			fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Comment> commenti = new ArrayList<>();
 	
 	public Ricetta() {
 	}

@@ -8,11 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import it.jaita88.dto.CommentDto;
+import it.jaita88.models.Comment;
 import it.jaita88.models.Ricetta;
 import it.jaita88.models.UtenteLogin;
 import it.jaita88.repositories.RicettaRepository;
 import it.jaita88.repositories.UtenteLoginRepository;
 import it.jaita88.security.SessionUtils;
+import it.jaita88.services.CommentService;
 import it.jaita88.services.IngredienteService;
 import it.jaita88.services.RicettaService;
 import it.jaita88.services.RicetteIngredientiService;
@@ -33,6 +36,8 @@ public class PageController {
 	IngredienteService service;
 	@Autowired
 	RicetteIngredientiService servicericing;
+	@Autowired
+	CommentService servicecomment;
 	@GetMapping("/chisiamo")
 	public String chisiamo(Model model) {
 		boolean condizione1 = SessionUtils.isAdmin();
@@ -94,7 +99,10 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		//utenteLoggato.addRicetta(null)
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "PastaPatate";
 	}
 	@GetMapping("/Frittata-farcita-con-prosciutto-e-mozzarella")
@@ -103,6 +111,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Frittata-farcita-con-prosciutto-e-mozzarella";		
 	}
 	@GetMapping("/Carbonara")
@@ -111,6 +124,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Carbonara";
 	}
 	@GetMapping("/Hummus-di-avocado-e-ceci")
@@ -119,6 +137,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Hummus-di-avocado-e-ceci";
 	}
 	@GetMapping("/Insalata-di-polpo")
@@ -127,6 +150,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Insalata-di-polpo";
 	}
 	@GetMapping("/Muffin") 
@@ -135,6 +163,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Muffin";
 	}
 	@GetMapping("/Nasello-in-umido")
@@ -143,6 +176,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Nasello-in-umido";
 	}
 	@GetMapping("/Pancakes-alla-banana")
@@ -151,6 +189,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Pancakes-alla-banana";
 	}
 	@GetMapping("/Pasta-con-crema-di-peperoni-e-salsiccia")
@@ -159,6 +202,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Pasta-con-crema-di-peperoni-e-salsiccia";
 	}
 	@GetMapping("/Pollo-con-spremuta-di-arancia")
@@ -167,6 +215,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Pollo-con-spremuta-di-arancia";
 	}
 	@GetMapping("/Vellutata-di-fave-e-piselli")
@@ -175,6 +228,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Vellutata-di-fave-e-piselli";
 	}
 	@GetMapping("/Pasta-con-zucca-e-salsiccia")
@@ -183,6 +241,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Pasta-con-zucca-e-salsiccia";
 	}
 	@GetMapping("/Pasta-al-burro-e-limone")
@@ -191,6 +254,11 @@ public class PageController {
 		boolean condizione2 = SessionUtils.isUser();
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
+		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		model.addAttribute("commentiesistenti", commentiesistenti);
+		CommentDto commentdto = new CommentDto();
+		model.addAttribute("commentdto", commentdto);
 		return "Pasta-al-burro-e-limone";
 	}
 	@GetMapping("/home")

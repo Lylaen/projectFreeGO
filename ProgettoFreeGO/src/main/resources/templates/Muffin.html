@@ -254,136 +254,24 @@ font-style: normal;
      
     </div>
   </div>
-  <footer>
-    <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
-        <!-- Section: Social media -->
-        <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
-            <!-- Left -->
-            <div class="me-5">
-                <span>Connetiti con noi</span>
-            </div>
-            <!-- Left -->
-    
-            <!-- Right -->
-            <div>
-                <a href=" #" class="text-white me-4">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a href="#" class="text-white me-4">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="#" class="text-white me-4">
-                    <i class="bi bi-google"></i>
-                </a>
-                <a href="#" class="text-white me-4">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="#" class="text-white me-4">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="#" class="text-white me-4">
-                    <i class="bi bi-github"></i>
-                </a>
-            </div>
-            <!-- Right -->
-        </section>
-        <!-- Section: Social media -->
-    
-        <!-- Section: Links  -->
-        <section class="">
-            <div class="container text-center text-md-start mt-5">
-                <!-- Grid row -->
-                <div class="row mt-3">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <img src="logo3.png" alt="" style="width:50%;">
-                        <h6 class="text-uppercase fw-bold">Free-Go</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px" />
-                        <p>
-                            Dove non riesce un libro, il frigo può!
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-    
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Products</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px" />
-                        <p>
-                            <a href="#!" class="text-white " style="color:black">Su di noi</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-white">Ricette</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-white">News</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-white">Video</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-    
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Useful links</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px" />
-                        <p>
-                            <a href="#!" class="text-white">Accedi al tuo account</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-white">Uniscti a noi</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-white">Alex Peluso</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-white">Aiuto</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-    
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <div class="row justify-content-center">
-                            
-                                <h6 class="text-uppercase fw-bold d-flex d-inline-block">Iscriviti alla nostra newsletter</h6>
-                            
-                            <hr class="mb-4 mt-0 d-inline-block mx-auto "
-                                style="width: 60px; background-color: #7c4dff; height: 2px" />
-                            <form>
-                                <div class="form-group mb-4">
-                                    <input type="email" class="form-control"
-                                        placeholder="Inserisci il tuo indirizzo email" required>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Iscriviti</button>
-                                </div>
-                            </form>
-    
-                        </div>
-                    </div>
-    
-                </div>
-                <!-- Grid column -->
-            </div>
-            <!-- Grid row -->
-            </div>
-        </section>
-        <!-- Section: Links  -->
-    
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2023 Copyright: Free-Go
-    
-        </div>
-  </footer>
+  <section>
+		<div class="card" th:each="a : ${commentiesistenti}" style="width: 18rem;">  
+  			<div class="card-body" >
+    			<h5 class="card-title" th:text="${a.titolo}"></h5>
+    			<h6 class="card-subtitle mb-2 text-muted" th:text="${a.testo}"></h6>
+    			 
+			</div>
+		</div>
+			<button type="button" class="btn btn-primary" onclick="mostraDiv();">Scrivi un commento!</button>
+			<div id="myDiv" class="hidden">
+				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
+    			<input type="text" th:field="*{titolo}" id="input1">
+    			<input type="text" th:field="*{testo}" id="input2">
+    			<button type="button" onclick="inviaCommento()" class="btn btn-primary">Invia</button>
+    		</form>
+  			</div>
+			</section>
+	<div th:replace="fragments/commonFooter.html :: footer"></div>
 <script>
 			var endpointUrl = 'http://localhost:8080/Muffin'
 		</script>
