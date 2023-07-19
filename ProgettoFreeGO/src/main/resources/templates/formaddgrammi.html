@@ -32,7 +32,7 @@
 					<div th:each="id, iterStat : ${ids}"> 
 						<label th:text="${listIngredienteRicetta[__${iterStat.index}__].nome}"></label>	
 						<label th:text="${listIngredienteRicetta[__${iterStat.index}__].id}"></label>						
-						<!--<div th:each="id : ${ids}">     th:field="*{idIngrediente}-->					
+						
 						<input type="number"  th:field="*{idIngrediente}">
 						<input type="number" min="0" max="2000" th:field="*{grammiml}">				
 						<br>
