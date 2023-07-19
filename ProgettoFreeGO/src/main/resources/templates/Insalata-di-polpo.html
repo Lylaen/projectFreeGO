@@ -149,7 +149,7 @@ font-style: normal;
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 my-3">
-			<button type="button" onclick="salvaPreferito(11)">Aggiungi ai preferiti</button>
+			<button type="button" onclick="salvaPreferito(11); chiudiDiv();">Aggiungi ai preferiti</button>
             <div id="Descrizione">
                 <h2 class="text-center">Descrizione</h2>
                 <p class="p">L’insalata di polpo prezzemolata è un gustoso antipasto tipico della cucina mediterranea, sempre molto apprezzato sulle nostre tavole per la sua freschezza e genuinità.Il segreto dell' intramontabile successo di questa insalata di pesce è proprio il suo gusto semplice e senza tempo, che la rende da sempre uno degli antipasti immancabili sulla tavola delle feste!</p>
@@ -170,9 +170,9 @@ font-style: normal;
             </div>
         </div>
       
-      <div id="immagine" class="col-lg-6 my-3">
-        <img id="Image" class="img-fluid mx-auto " src="Insalata-di-polpo-1200x675.avif" style="max-height: 500px;">
-      </div>
+      
+        <img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/insalatapolipo.png}" style="max-height: 300px;border-radius: 9px;">
+      
       
       
     </div>

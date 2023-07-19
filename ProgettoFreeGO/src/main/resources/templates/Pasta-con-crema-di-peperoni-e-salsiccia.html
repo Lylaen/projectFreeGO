@@ -149,7 +149,7 @@ font-style: normal;
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 my-3">
-			<button type="button" onclick="salvaPreferito(4)">Aggiungi ai preferiti</button>
+			<button type="button" onclick="salvaPreferito(4); chiudiDiv();">Aggiungi ai preferiti</button>
             <div id="Descrizione">
                 <h2 class="text-center">Descrizione</h2>
                 <p class="p">La pasta  con crema di peperoni e salsiccia è un primo piatto davvero eccezionale! cremosissima veloce e soprattutto ricca di sapore.Un primo saporito e colorato, perfetto per la stagione estiva, momento in cui i peperoni danno il meglio di sé. Adatto per un pranzo domenicale in famiglia o una cena in terrazza con gli amici, conquisterà grandi e piccini per un gusto e una cremosità davvero irresistibili.
@@ -170,9 +170,9 @@ font-style: normal;
                 </div>
             </div>
         </div>
-      <div id="immagine" class="col-lg-6 my-3">
-        <img id="Image" class="img-fluid mx-auto " src="Pasta-con-crema-di-peperoni-e-salsiccia-1.jpg" style="max-height: 500px;">
-      </div>
+      
+        <img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/pastapeperonisalsiccia.png}" style="max-height: 300px;border-radius: 9px;">
+      
       
     </div>
     <div class="row justify-content-center">

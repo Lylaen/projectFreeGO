@@ -149,7 +149,7 @@ font-style: normal;
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 my-3">
-			<button type="button" onclick="salvaPreferito(7)">Aggiungi ai preferiti</button>
+			<button type="button" onclick="salvaPreferito(7); chiudiDiv();">Aggiungi ai preferiti</button>
             <div id="Descrizione">
                 <h2 class="text-center">Descrizione</h2>
                 <p class="p">>La frittata di mozzarella e prosciutto cotto è una pietanza golosa, realizzata con uova sbattute, mozzarella, prosciutto cotto  e foglie di menta tritate.Una preparazione di successo, che si caratterizza per una forte personalità di sapori. Una ricetta ben definita e in equilibrio, che sarà particolarmente apprezzata dai vostri commensali per la sua morbida scioglievolezza e per il suo sapore delicato ma non banale</p>
@@ -169,9 +169,9 @@ font-style: normal;
                 </div>
             </div>
         </div>
-      <div id="immagine" class="col-lg-6 my-3">
-        <img id="Image" class="img-fluid mx-auto " src="frittata-prosciutto-formaggio-1200x675.avif" style="max-height: 500px;">
-      </div>
+      
+        <img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/frittatafarcita.png}" style="max-height: 300px;border-radius: 9px;">
+     
       
     </div>
     <div class="row justify-content-center">

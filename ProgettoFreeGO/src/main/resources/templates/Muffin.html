@@ -149,7 +149,7 @@ font-style: normal;
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 my-3">
-			<button type="button" onclick="salvaPreferito(13)">Aggiungi ai preferiti</button>
+			<button type="button" onclick="salvaPreferito(13); chiudiDiv();">Aggiungi ai preferiti</button>
             <div id="Descrizione">
                 <h2 class="text-center">Descrizione</h2>
                 <p class="p"> I muffin sono dei classici dolcetti americani, perfetti per qualunque momento della giornata: dalla colazione, insieme a un cappuccino caldo, alla merenda dei più piccoli o per accompagnare un thè con gli amici.I muffin possono essere personalizzati come meglio si preferisce, se amate la frutta potete realizzare ad esempio i muffin alle mele, ma il cioccolato, che ha sedotto i più grandi scrittori, da Goldoni a Leopardi, è sicuramente la scelta più apprezzata
@@ -171,9 +171,9 @@ font-style: normal;
                 </div>
             </div>
         </div>
-      <div id="immagine" class="col-lg-6 my-3">
-        <img id="Image" class="img-fluid mx-auto " src="Muffin-con-gocce-di-cioccolato-1200x675.avif" style="max-height: 500px;">
-      </div>
+     
+        <img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/muffin.png}" style="max-height: 300px;border-radius: 9px;">
+      
       
     </div>
     <div class="row justify-content-center">

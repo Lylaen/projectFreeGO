@@ -34,13 +34,18 @@
 			box-sizing: border-box;
 		}
 
-		#Image {
+		#immagine {
 			text-align: center;
-			margin-left: 28%;
-
-
 		}
 
+		#Image {
+			text-align: center;
+			max-width: 100%;
+			max-height: 800px;
+			width: auto;
+			height: auto;
+			margin-top: 7%;
+		}
 
 		#Descrizione {
 			font-style: normal;
@@ -85,21 +90,36 @@
 
 		#preparazione {
 			text-align: justify;
-			font-size: 100%;
+			font-size: 120%;
 			justify-content: left;
 			margin-top: 2%;
 			margin-left: 20%;
-
-
+			font-style: normal;
 		}
 
 		.preparazione {
 			text-align: center;
 			margin-top: 8%;
 			font-size: 200%;
+			font-style: normal;
 		}
 
-		.text-center {
+		.ESECUZIONE {
+			color: #f49f09;
+			margin-top: 25%;
+			font-size: 100%;
+			padding: auto;
+		}
+
+		.table-container {
+			margin-top: 50px;
+		}
+
+		.table-container .table {
+			margin-bottom: 0;
+		}
+
+		h2 {
 			font-style: italic;
 		}
 	</style>
@@ -124,7 +144,7 @@
 		</div>
 		<div class="row justify-content-center">
 			<div class="col-lg-6 my-3">
-				<button type="button" onclick="salvaPreferito(5)">Aggiungi ai preferiti</button>
+				<button type="button" onclick="salvaPreferito(5); chiudiDiv();">Aggiungi ai preferiti</button>
 				<div id="Descrizione">
 					<h2 class="text-center">Descrizione</h2>
 					<p class="p">Gli spaghetti alla carbonara sono un grande classico della cucina italiana. Una ricetta
@@ -133,11 +153,20 @@
 						Basta vedere in rete: chef famosi (e non) propongono la loro variante, così come in tanti ne
 						hanno una propria
 						versione, magari tramandata in famiglia.</p>
+					<div class="row d-flex">
+						<div class="col  border border-dark" style="text-align: center; ">
+
+							<h4> &#x23F0; Tempo 25m</h4>
+						</div>
+						<div class="col  border  border-dark" style="text-align: center;">
+							<h4>&#x1F525; Cottura 10m</h4>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div id="immagine" class="col-lg-6 my-3">
-				<img id="Image" class="img-fluid mx-auto d-block" src="carbonara.jpg">
-			</div>
+			
+				<img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/carbonara.png}" style="max-height: 300px;border-radius: 9px;">
+			
 		</div>
 		<div class="row justify-content-center">
 			<div class="col-lg-4">
@@ -183,48 +212,72 @@
 
 
 			<div class="col-lg-6">
-				<h3 class="text-center">Preparazione</h3>
-				<div id="preparazione">
-					<ul>
-						<li> 1 Prima cosa pulite il pezzo di guanciale, eliminando la cotenna. Tagliate a cubetti il
-							pezzo di guanciale e metteteli a rosolare in un'ampia padella. Non serve olio, in quanto il
-							guanciale rilascerà il suo grasso durante la cottura. Una volta che il guanciale ha preso
-							colore spegnete il fuoco e conservate il grasso in eccesso.</li>
-						<li>2 Dedicatevi ora alle uova, di cui userete solo i tuorli: sbatteteli in una boule di metallo
-							con il grasso del guanciale filtrato con un colino. Portate a bollore dell'acqua in una
-							pentola. Appoggiate la ciotola sul bordo della pentola e lavorate i tuorli con una frusta a
-							bagnomaria. Aggiungete il pecorino e continuate a mescolare. Togliete dal fuoco: se vi
-							accorgete che la salsa ottenuta è troppo densa unite qualche cucchiaio di acqua calda, al
-							fine di ottenere un composto lucido e cremoso. </li>
-						<li>3 Lessate gli spaghetti al dente in acqua non troppo salata (il condimento è già molto
-							sapido) e uniteli al guanciale. Fate insaporite per un paio di minuti sul fuoco e trasferite
-							il tutto in una zuppiera capiente. A questo punto aggiungete la crema di tuorli, il pepe
-							nero e amalgamate bene. .</li>
-						<li>4 Porzionate nei piatti da portata e completate con del pecorino e una spolverata di pepe
-							nero. Gli spaghetti alla carbonara sono pronti per essere serviti. </li>
-					</ul>
-				</div>
-			</div>
+                <h2 class="text-center">Preparazione</h2>
+                <div id="preparazione">
+                    <ul>
+                      <li> 1 Prima cosa pulite il pezzo di guanciale, eliminando la cotenna. Tagliate a cubetti il pezzo di guanciale e metteteli a rosolare in un'ampia padella. Non serve olio, in quanto il guanciale rilascerà il suo grasso durante la cottura. Una volta che il guanciale ha preso colore spegnete il fuoco e conservate il grasso in eccesso.</li> <br>
+                      <li>2 Dedicatevi ora alle uova, di cui userete solo i tuorli: sbatteteli in una boule di metallo con il grasso del guanciale filtrato con un colino. Portate a bollore dell'acqua in una pentola. Appoggiate la ciotola sul bordo della pentola e lavorate i tuorli con una frusta a bagnomaria. Aggiungete il pecorino e continuate a mescolare. Togliete dal fuoco: se vi accorgete che la salsa ottenuta è troppo densa unite qualche cucchiaio di acqua calda, al fine di ottenere un composto lucido e cremoso. </li> <br>
+                      <li>3 Lessate gli spaghetti al dente in acqua non troppo salata (il condimento è già molto sapido) e uniteli al guanciale. Fate insaporite per un paio di minuti sul fuoco e trasferite il tutto in una zuppiera capiente. A questo punto aggiungete la crema di tuorli, il pepe nero e amalgamate bene. .</li> <br>
+                      <li>4 Porzionate nei piatti da portata e completate con del pecorino e una spolverata di pepe nero. Gli spaghetti alla carbonara sono pronti per essere serviti. </li> <br>
+                    </ul>
+                </div>
+            </div>
 
 		</div>
 	</div>
+	<div class="container" style="min-height: 0;">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6">
+                <div class="card cardrev">
+                    <div class="circle"></div>
+                    <div class="content">
+                        <p class="p1">Cetriolo Rick</p>
+                        <p class="p2">'Sono uno scienziato; perché invento, trasformo, creo e distruggo per vivere, e
+                            quando
+                            qualcosa del mondo
+                            non mi piace, lo cambio '.</p>
+                    </div>
+                    <img class="img1" src="Rick-And-Morty.png" alt="">
+    
+    
+                </div>
+            </div>
+    
+            <div class="col-lg-6  ">
+                <div class="card cardrev">
+                    <div class="circle"></div>
+                    <div class="content">
+                        <p class="p1">Cetriolo Rick</p>
+                        <p class="p2">'Sono uno scienziato; perché invento, trasformo, creo e distruggo per vivere, e
+                            quando
+                            qualcosa del mondo
+                            non mi piace, lo cambio '.</p>
+                    </div>
+                    <img class="img2" src="spiderman.png" alt="">
+    
+    
+                </div>
+            </div>
+    
+        </div>
+    </div>
 	<section>
-		<div class="card" th:each="a : ${commentiesistenti}" style="width: 18rem;">  
-  			<div class="card-body" >
-    			<h5 class="card-title" th:text="${a.titolo}"></h5>
-    			<h6 class="card-subtitle mb-2 text-muted" th:text="${a.testo}"></h6>
-    			 
+		<div class="card" th:each="a : ${commentiesistenti}" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title" th:text="${a.titolo}"></h5>
+				<h6 class="card-subtitle mb-2 text-muted" th:text="${a.testo}"></h6>
+
 			</div>
 		</div>
-			<button type="button" class="btn btn-primary" onclick="mostraDiv();">Scrivi un commento!</button>
-			<div id="myDiv" class="hidden">
-				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
-    			<input type="text" th:field="*{titolo}" id="input1">
-    			<input type="text" th:field="*{testo}" id="input2">
-    			<button type="button" onclick="inviaCommento()" class="btn btn-primary">Invia</button>
-    		</form>
-  			</div>
-			</section>
+		<button type="button" class="btn btn-primary" onclick="mostraDiv();">Scrivi un commento!</button>
+		<div id="myDiv" class="hidden">
+			<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
+				<input type="text" th:field="*{titolo}" id="input1">
+				<input type="text" th:field="*{testo}" id="input2">
+				<button type="button" onclick="inviaCommento()" class="btn btn-primary">Invia</button>
+			</form>
+		</div>
+	</section>
 	<div th:replace="fragments/commonFooter.html :: footer"></div>
 	<script>
 		var endpointUrl = 'http://localhost:8080/Carbonara'

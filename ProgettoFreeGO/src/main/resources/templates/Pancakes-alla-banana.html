@@ -151,7 +151,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-6 my-3">
-				<button type="button" onclick="salvaPreferito(12)">Aggiungi ai preferiti</button>
+				<button type="button" onclick="salvaPreferito(12); chiudiDiv();">Aggiungi ai preferiti</button>
                 <div id="Descrizione">
                     <h2 class="text-center">Descrizione</h2>
                     <p class="p">E’ il giorno perfetto per concedersi una colazione golosa con degli sfiziosi pancake
@@ -174,10 +174,9 @@
                     </div>
                 </div>
             </div>
-            <div id="immagine" class="col-lg-6 my-3">
-                <img id="Image" class="img-fluid mx-auto " src="pancake-alla-banana-still-life-1200x675.avif"
-                    style="max-height: 500px;">
-            </div>
+           
+                <img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/pancakeallabanana.png}" style="max-height: 300px;border-radius: 9px;">
+            
 
         </div>
         <div class="row justify-content-center">

@@ -147,7 +147,7 @@ font-style: normal;
     </div>
     <div class="row justify-content-center">
      <div class="col-lg-6 my-3">
-		 <button type="button" onclick="salvaPreferito(1)">Aggiungi ai preferiti</button>
+		 <button type="button" onclick="salvaPreferito(1); chiudiDiv();">Aggiungi ai preferiti</button>
         <div id="Descrizione">
           <h2 class="text-center">Descrizione</h2>
           <p class="p"> Non sapete cosa preparare per pranzo? Pochi ingredienti in frigo? La risposta è in questa pasta al burro. In aggiunta ad un ottimo ingrediente, fresco, profumato e coloratissimo: il limone.Con pochi e semplici passi vi stupirà per il suo risultato gustoso, cremoso e profumato.</p>
@@ -168,9 +168,9 @@ font-style: normal;
     </div>
         </div>
       
-      <div id="immagine" class="col-lg-6 my-3">
-        <img id="Image"  class="img-fluid mx-auto " src="immaginiricettemattia/Spaghettoni-al-limone-1200x675.jpg" >
-      </div>
+      
+        <img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/pastaburro.png}" style="max-height: 300px;border-radius: 9px;">
+      
       
     </div>
     <div class="row justify-content-center">
