@@ -8,10 +8,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
   <style>
     .card {
-      max-width: 300px;
+        max-width: 312px;
+      min-width: 312px;
+      min-height: 426px;
+      max-height: 426px;
+      margin: 0 auto;
       margin: 0 auto;
       border: 2px solid #f49f09;
       transition: transform 0.3s, box-shadow 0.3s;
+      margin-left: 5px !important;
     }
 
     .card:hover {
@@ -24,14 +29,14 @@
       object-fit: cover;
     }
 
-    .card-title {
+    .card-title1 {
       font-size: 20px;
       font-weight: bold;
       margin-bottom: 10px;
       font-style: italic;
     }
 
-    .card-text {
+    .card-text1 {
       height: 80px;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -62,62 +67,91 @@
       z-index: 1;
     }
 
-    .text-center {
+    .text-center1 {
       font-style: italic;
       color: #f49f09;
       margin-bottom: 3%;
+      text-align: center;
     }
+             a{
+  color: black !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #7c4dff !important;
+}
   </style>
+  <link rel="stylesheet" th:href="@{css/footer.css}">
 </head>
 
 <body>
+<nav>
+	<div th:if="${condizione1}">
+		<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1}" th:if="${condizione2}">
+		<div th:replace="fragments/navbarutente.html :: a-navbar"></div>
+	</div>
+	<div th:unless="${condizione1 or condizione2}">
+		<div th:replace="fragments/navgeneral.html :: a-navbar"></div>
+	</div>
+	</nav>	
   <div class="container my-5">
-    <h1 class="text-center">Secondi piatti</h1>
+    <h1 class="text-center1">Secondi piatti</h1>
     <div class="row justify-content-center">
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-4">
         <div class="card mb-4">
-          <img th:src="@{/polloarancia.png}" alt="Immagine 1" class="card-img-top">
+          <img th:src="@{/images/immaginiricette/polloarancia.png}" alt="Immagine 1" class="card-img-top">
           <div class="card-body">
-            <h5 class="card-title">Pollo all'arancia</h5>
-            <p class="card-text">Siete alla ricerca di un secondo piatto semplice, sfizioso e profumato? Allora provate il  pollo all’arancia: una ricetta molto succulenta!</p>
+            <h5 class="card-title1">Pollo all'arancia</h5>
+            <p class="card-text1">Siete alla ricerca di un secondo piatto semplice, sfizioso e profumato? Allora provate il  pollo all’arancia: una ricetta molto succulenta!</p>
             <span class="emoji">&#x23F0;</span><span class="emoji">20</span> <span class="emoji">&#x1F525;</span><span class="emoji">30m</span>
+            <br>
+            <a th:href="@{/Pollo-con-spremuta-di-arancia}">Vai alla ricetta</a>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-4">
         <div class="card mb-4">
-          <img th:src="@{/naselloinumido.png}" alt="Immagine 2" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Nasello in umido</h5>
-            <p class="card-text">Il Nasello in umido è un secondo piatto a base di pesce molto sfizioso, con un condimento ricco e succulento perfetto da servire con il pane!</p>
+          <img th:src="@{/images/immaginiricette/naselloinumido.png}" alt="Immagine 2" class="card-img-top">
+          <div class="card-body1">
+            <h5 class="card-title1">Nasello in umido</h5>
+            <p class="card-text1">Il Nasello in umido è un secondo piatto a base di pesce molto sfizioso, con un condimento ricco e succulento perfetto da servire con il pane!</p>
             <span class="emoji">&#x23F0;</span><span class="emoji">10</span> <span class="emoji">&#x1F525;</span><span class="emoji">5m</span>
+            <br>
+            <a th:href="@{/Nasello-in-umido}">Vai alla ricetta</a>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-4">
         <div class="card mb-4">
-          <img th:src="@{/vellutatafave.png}" alt="Immagine 3" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Vellutata di fave e cavolo</h5>
-            <p class="card-text">La vellutata di fave e cavolo è un cremoso primo piatto vegetariano dalle molte proprietà e dai colori vivaci che vanno dal viola intenso al rosa!
+          <img th:src="@{/images/immaginiricette/vellutatafave.png}" alt="Immagine 3" class="card-img-top">
+          <div class="card-body1">
+            <h5 class="card-title1">Vellutata di fave e cavolo</h5>
+            <p class="card-text1">La vellutata di fave e cavolo è un cremoso primo piatto vegetariano dalle molte proprietà e dai colori vivaci che vanno dal viola intenso al rosa!
             </p>
             <span class="emoji">&#x23F0;</span><span class="emoji">15</span> <span class="emoji">&#x1F525;</span><span class="emoji">20m</span>
+            <br>
+            <a th:href="@{/Vellutata-di-fave-e-piselli}">Vai alla ricetta</a>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-4">
         <div class="card mb-4">
-          <img th:src="@{/frittata farcita.png}" alt="Immagine 4" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Frittata prosciutto e mozzarella</h5>
-            <p class="card-text">La frittata al prosciutto e mozzarella, è uno sfizioso antipasto  servito caldo, dal gustoso sapore di affumicato.</p>
+          <img th:src="@{/images/immaginiricette/frittatafarcita.png}" alt="Immagine 4" class="card-img-top">
+          <div class="card-body1">
+            <h5 class="card-title1">Frittata prosciutto e mozzarella</h5>
+            <p class="card-text1">La frittata al prosciutto e mozzarella, è uno sfizioso antipasto  servito caldo, dal gustoso sapore di affumicato.</p>
             <span class="emoji">&#x23F0;</span><span class="emoji">10</span> <span class="emoji">&#x1F525;</span><span class="emoji">7m</span>
+            <br>
+            <a th:href="@{/Frittata-farcita-con-prosciutto-e-mozzarella}">Vai alla ricetta</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+<div th:replace="fragments/commonFooter.html :: footer"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

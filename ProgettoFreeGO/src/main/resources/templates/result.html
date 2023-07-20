@@ -12,14 +12,10 @@
 
   <style>
     /* Effetto Parallax */
-    body {
-      background-image: url('sfondo.jpg');
-      background-attachment: fixed;
-      background-size: cover;
-    }
+
 
     /* Sfondo arancione sfumato con viola */
-    .container {
+    .container1 {
       background-color: #f7f6f8;
       padding: 50px;
       border-radius: 10px;
@@ -43,19 +39,19 @@
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     }
 
-   .img1 {
+    .img1 {
       height: 200px !important;
       object-fit: cover !important;
     }
 
-    .card-title {
+    .card-title1 {
       font-size: 20px;
       font-weight: bold;
       margin-bottom: 10px;
       font-style: italic;
     }
 
-    .card-text {
+    .card-text1 {
       height: 80px;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -74,10 +70,10 @@
       border-image: repeating-linear-gradient(135deg, #F8CA00 0 10px, #E97F02 0 20px, #90198e 0 30px) 8;
       -webkit-mask: conic-gradient(from 180deg at top 8px right 8px, #0000 90deg, #000 0) var(--_i, 200%) 0 / 200% var(--_i, 8px) border-box no-repeat, conic-gradient(at bottom 8px left 8px, #0000 90deg, #000 0) 0 var(--_i, 200%) / var(--_i, 8px) 200% border-box no-repeat, linear-gradient(#000 0 0) padding-box no-repeat;
       transition: .3s, -webkit-mask-position .3s .3s;
-      
+
     }
-    
-    
+
+
 
     .card:hover::before {
       --_i: 100%;
@@ -89,7 +85,7 @@
       z-index: 1;
     }
 
-    .text-center {
+    .text-center1 {
       font-style: italic;
       color: #f49f09;
       margin-bottom: 3%;
@@ -104,16 +100,17 @@
     .row-second .card {
       margin-bottom: 20px;
     }
-   a{
-  color: black !important;
-  text-decoration: none !important;
-}
 
-a:hover {
-  color: #7c4dff !important;
-}
-    
+    a {
+      color: black !important;
+      text-decoration: none !important;
+    }
+
+    a:hover {
+      color: #7c4dff !important;
+    }
   </style>
+  <link rel="stylesheet" th:href="@{css/footer.css}">
 
 </head>
 
@@ -129,25 +126,27 @@ a:hover {
       <div th:replace="fragments/navgeneral.html :: a-navbar"></div>
     </div>
   </nav>
-  <div class="container">
+  <div class="container1">
     <div class="row d-flex mb-3 ">
-    <h1 style="color: #f49f09 ;text-align: center; font-style: italic;">Ecco qui i tuoi risultati</h1>
+      <h1 style="color: #f49f09 ;text-align: center; font-style: italic;">Ecco qui i tuoi risultati</h1>
     </div>
     <div class="row row-first justify-content-center">
       <!-- Prima riga con 3 card sopra -->
       <div class="mb-4 col-lg-4" th:each="a : ${result}">
         <div class="card">
-        <img th:src="@{/images/immaginiricette/{zimmagine}(zimmagine=${a.zimmagine})}" class="card-img-top"
-          alt="Immagine 1">
-        <div class="card-body">
-          <h5 class="card-title" style="color: #000; font-style: italic;" th:text="${a.nome}"></h5>
-          <h6 class="card-subtitle mb-2 text-muted" th:text="'Tempo di preparazione:'  + ${a.tempo}"></h6>
-          <a th:href="@{${#strings.replace(a.nome, ' ', '-')}}">Vai alla ricetta</a>
-        </div>
+          <img th:src="@{/images/immaginiricette/{zimmagine}(zimmagine=${a.zimmagine})}" class="card-img-top"
+            alt="Immagine 1">
+          <div class="card-body">
+            <h5 class="card-title1" style="color: #000; font-style: italic;" th:text="${a.nome}"></h5>
+            <h6 class="card-subtitle mb-2 text-muted" th:text="'Tempo di preparazione:'  + ${a.tempo}"></h6>
+            <a th:href="@{${#strings.replace(a.nome, ' ', '-')}}">Vai alla ricetta</a>
+          </div>
         </div>
 
+      </div>
     </div>
   </div>
+  <div th:replace="fragments/commonFooter.html :: footer"></div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -155,4 +154,3 @@ a:hover {
 </body>
 
 </html>
-

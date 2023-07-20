@@ -195,9 +195,15 @@
     }
 
  .btn2{
- margin-bottom: 5px !important;
+ margin-bottom: 10px !important;
  margin-left:5px !important;
+ max-width: 200px !important;
+  min-width: 200px !important;
+  max-height: 40px !important;
+  min-height: 40px !important;
+  
  }
+ 
 
 
   </style>
@@ -239,15 +245,15 @@
 
                         <div class="row d-flex">
 
-                         <a th:href="@{/showPwForm}"><button  type="button" class="btn btn-warning col btn2">Modifica
+                         <a th:href="@{/showPwForm}" class="mb-2 mt-2"><button  type="button" class="btn btn-warning col btn2 ">Modifica
                             password
                           </button></a>
 
-                          <a th:href="@{/showNomeForm}"><button  type="button" class="btn btn-warning col btn2">Modifica Nome
+                          <a th:href="@{/showNomeForm}"class="mb-2"><button  type="button" class="btn btn-warning col btn2 ">Modifica Nome
 
                           </button></a>
 
-                          <a th:href="@{/showCognomeForm}"><button  type="button" class="btn btn-warning col btn2">Modifica
+                          <a th:href="@{/showCognomeForm}" class="mb-2"><button  type="button" class="btn btn-warning col btn2 ">Modifica
                             Cognome
                           </button></a>
 
@@ -269,16 +275,14 @@
 
   </section>
 
-
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
     integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
     crossorigin="anonymous"></script>
-  <script src="particles.js"></script>
   <script src='https://cdn.jsdelivr.net/npm/@dazzle/particles@2.11.1@particles.js'></script>
-  <script src="loginForm.js"></script>
+  <script th:src="@{js/loginForm.js}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>

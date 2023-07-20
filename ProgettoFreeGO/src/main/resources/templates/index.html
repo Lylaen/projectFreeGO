@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Index</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -16,240 +16,252 @@
 </head>
 
 <body>
-	<!-- NAVBAR DA COPIARE NELLE PAGINE HTML NUOVE - INIZIO -->
-	<nav>
-	<div th:if="${condizione1}">
-		<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
-	</div>
-	<div th:unless="${condizione1}" th:if="${condizione2}">
-		<div th:replace="fragments/navbarutente.html :: a-navbar"></div>
-	</div>
-	<div th:unless="${condizione1 or condizione2}">
-		<div th:replace="fragments/navgeneral.html :: a-navbar"></div>
-	</div>
-	</nav>	
-	<!-- NAVBAR FINE COPIA -->
-	<header>
-		
-			<div class="container-fluid sear d-flex flex-sm-wrap ">
-
-				<div class="row-grid col-lg-8 " style="padding: -10rem;">
-					<div class="col-lg-12">
-						<h1 style="text-align: center;">Vai dove ti porta il cuore, al frigo!</h1>
-					</div>
-			<form method="post" th:action="@{/result}">
-					<div class="main-search-input-wrap ">
-						<div class="input-group input-group-lg shadow">
-							<input type="text" class="form-control " aria-label="Sizing example input"
-								aria-describedby="inputGroup-sizing-lg" placeholder="Cerca Ingrediente" name="nomeing">
-							<!--<span class="input-group-text btnmod" id="inputGroup-sizing-lg">Cerca</span> -->
-							<button class="input-group-text btnmod" type="submit">Cerca</button>
-						</div>
-					</div>
-					<div class="container d-flex" style="gap: 10px;  margin-top: 25px; justify-content: center;">
-						<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#modalIntolleranze">
-                        Intolleranze
-                    </button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTempo">
-                        Tempo
-                    </button>
-					<div class="input-group  ">
-
-                        <input type="text" class="form-control" aria-describedby="inputGroup-sizing-lg"
-                           name="grammiml" placeholder="Inserisci Grammi" aria-label="Cerca Ingrediente" style="width: auto;">
-
-                    </div><!-- fine searchbar grammi -->
-
-                </div><!-- fine sear ingrediente -->
-
-
-                <div class="container-fluid d-flex flex-nowrap">
-                    <!-- Modal Intolleranze -->
-                    <div class="modal fade col" id="modalIntolleranze" tabindex="-1"
-                        aria-labelledby="modalIntolleranzeLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="modalIntolleranzeLabel">Intolleranze</h5>
-                                    <button type="button" class="btn-close " data-bs-dismiss="modal"
-                                        aria-label="Close" ></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="glutine"
-                                            name="intolleranza1" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Glutine
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="crostacei"
-                                            name="intolleranza2" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Crostacei
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="lattosio"
-                                            name="intolleranza3" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Lattosio
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="soia"
-                                            name="intolleranza4" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Soia
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="fruttasecca"
-                                            name="intolleranza5" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Frutta Secca
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="uova"
-                                            name="intolleranza6" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Uova
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="pesce"
-                                            name="intolleranza7" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Pesce
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="arachidi"
-                                            name="intolleranza8" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Arachidi
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="sedano"
-                                            name="intolleranza9" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Sedano
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="senape"
-                                            name="intolleranza10" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Senape
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="sesamo"
-                                            name="intolleranza11" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Sesamo
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="anidridesolforosa"
-                                            name="intolleranza12" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Anidride Solforosa
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="lupini"
-                                            name="intolleranza13" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Lupini
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="molluschi"
-                                            name="intolleranza14" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Molluschi
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Chiudi</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- fine modal intolleranze -->
-
-                    <!-- Modal Tempo -->
-                    <div class="modal fade col-4" id="modalTempo" tabindex="-1" aria-labelledby="modalTempoLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="modalTempoLabel">Tempo</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="15"
-                                                name="tempo1" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                15
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="30"
-                                            name="tempo2" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                30
-                                            </label>
-                                        </div>
-                                        <div class="form-check col cl1">
-                                            <input class="form-check-input" type="checkbox" value="60"
-                                            name="tempo3" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                60
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Chiudi</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- fine modal tempo -->
-
-
- 				</div>
-            </div>
+    <!-- NAVBAR DA COPIARE NELLE PAGINE HTML NUOVE - INIZIO -->
+    <nav>
+        <div th:if="${condizione1}">
+            <div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
         </div>
-		</form>
-	</header> <!-- fine header -->
-	
-	<!-- inizio section -->
+        <div th:unless="${condizione1}" th:if="${condizione2}">
+            <div th:replace="fragments/navbarutente.html :: a-navbar"></div>
+        </div>
+        <div th:unless="${condizione1 or condizione2}">
+            <div th:replace="fragments/navgeneral.html :: a-navbar"></div>
+        </div>
+    </nav>
+    <!-- NAVBAR FINE COPIA -->
+    <header>
+
+        <div class="container-fluid sear d-flex ">
+
+            <div class="row-grid col-lg-8 " style="padding: -10rem;">
+                <div class="col-lg-12">
+                    <h1 style="text-align: center;">Vai dove ti porta il cuore, al frigo!</h1>
+                </div>
+                <form method="post" th:action="@{/result}">
+                    <div class="container-fluid">
+                        <div class="main-search-input-wrap ">
+                            <div class="input-group input-group-lg shadow">
+                                <input type="text" class="form-control rounded-5 " aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-lg" placeholder="Cerca Ingrediente"
+                                    name="nomeing">
+                                <!--<span class="input-group-text btnmod" id="inputGroup-sizing-lg">Cerca</span> -->
+                                <button class="input-group-text btnmod rounded-5" type="submit">Cerca</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container d-flex " style="gap: 10px; margin-top: 25px; justify-content: center;">
+                        <button type="button" class="btn btn-primary rounded-5 " data-bs-toggle="modal"
+                            data-bs-target="#modalIntolleranze">
+                            Intolleranze
+                        </button>
+                        <button type="button" class="btn btn-primary rounded-5 " data-bs-toggle="modal"
+                            data-bs-target="#modalTempo">
+                            Tempo
+                        </button>
+                        <div class="input-group  ">
+                            <div class="col-4 mt-2">
+
+                                <input type="text" class="form-control rounded-5 "
+                                    aria-describedby="inputGroup-sizing-lg" name="grammiml"
+                                    placeholder="Inserisci Grammi" aria-label="Cerca Ingrediente" style="width: auto;">
+                            </div>
+
+                        </div><!-- fine searchbar grammi -->
+
+                        <!-- fine sear ingrediente -->
+
+
+                        <div class="container-fluid d-flex flex-nowrap">
+                            <!-- Modal Intolleranze -->
+                            <div class="modal fade col" id="modalIntolleranze" tabindex="-1"
+                                aria-labelledby="modalIntolleranzeLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalIntolleranzeLabel">Intolleranze</h5>
+                                            <button type="button" class="btn-close " data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="glutine"
+                                                        name="intolleranza1" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Glutine
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="crostacei"
+                                                        name="intolleranza2" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Crostacei
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="lattosio"
+                                                        name="intolleranza3" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Lattosio
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="soia"
+                                                        name="intolleranza4" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Soia
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="fruttasecca"
+                                                        name="intolleranza5" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Frutta Secca
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="uova"
+                                                        name="intolleranza6" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Uova
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="pesce"
+                                                        name="intolleranza7" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Pesce
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="arachidi"
+                                                        name="intolleranza8" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Arachidi
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="sedano"
+                                                        name="intolleranza9" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Sedano
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="senape"
+                                                        name="intolleranza10" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Senape
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="sesamo"
+                                                        name="intolleranza11" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Sesamo
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        value="anidridesolforosa" name="intolleranza12"
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Anidride Solforosa
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="lupini"
+                                                        name="intolleranza13" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Lupini
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="molluschi"
+                                                        name="intolleranza14" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        Molluschi
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Chiudi</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- fine modal intolleranze -->
+
+                            <!-- Modal Tempo -->
+                            <div class="modal fade col-4" id="modalTempo" tabindex="-1"
+                                aria-labelledby="modalTempoLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalTempoLabel">Tempo</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="15"
+                                                        name="tempo1" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        15
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="30"
+                                                        name="tempo2" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        30
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col cl1">
+                                                    <input class="form-check-input" type="checkbox" value="60"
+                                                        name="tempo3" id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        60
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Chiudi</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- fine modal tempo -->
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+    </header> <!-- fine header -->
+
+    <!-- inizio section -->
     <section>
         <div class="image-container d-flex row section section1" style="padding: 1.5%; ">
 
             <div id="elemento1" class="col-md animate__animated  animate__slideInUp">
                 <h2 style="justify-content: center;" class="col-md d-flex">Antipasti</h2>
                 <div class="content">
-                    <a href="#">
+                    <a th:href="@{/antipasti}">
                         <div class="content-overlay"></div>
                         <img class="content-image image1"
                             src="https://media-assets.lacucinaitaliana.it/photos/64946aa344bcd2f6f4f30d92/master/w_1600,c_limit/PAN-POSS-CON-POMODORO-E-ORIGANO1.jpg">
                         <div class="content-details fadeIn-bottom">
                             <div class="row d-flex">
-                                <h5 class="content-title d-flex displayh3hov"> <span
-                                        class="badge text-bg-secondary  ">Vai alla selezione</span></h5>
+                                <h5 class="content-title d-flex displayh3hov"> <span class="badge text-bg-secondary  "
+                                        style="font-size:1.5rem !important;">Vai alla selezione</span></h5>
                             </div>
                         </div>
                     </a>
@@ -259,12 +271,13 @@
             <div id="elemento2" class="col-md animate__animated  animate__slideInUp">
                 <h2 style="justify-content: center;" class="col-md d-flex">Primi</h2>
                 <div class="content">
-                    <a href="#">
+                    <a th:href="@{/primi}">
                         <div class="content-overlay"></div>
                         <img class="content-image image1"
                             src="https://media-assets.lacucinaitaliana.it/photos/64a57cc1da53b8e5e1b60e86/master/w_1600,c_limit/RAVIOLO-APERTO-CON-PRIMIZIE1.jpg">
                         <div class="content-details fadeIn-bottom">
-                            <h5 class="content-title d-flex displayh3hov"> <span class="badge text-bg-secondary ">Vai
+                            <h5 class="content-title d-flex displayh3hov"> <span class="badge text-bg-secondary "
+                                    style="font-size:1.5rem !important;">Vai
                                     alla selezione</span></h5>
                         </div>
                     </a>
@@ -274,12 +287,13 @@
             <div id="elemento3" class="col-md animate__animated  animate__slideInUp">
                 <h2 style="justify-content: center;" class="col-md d-flex">Secondi</h2>
                 <div class="content">
-                    <a href="#">
+                    <a th:href="@{/secondi}">
                         <div class="content-overlay"></div>
                         <img class="content-image image1"
                             src="https://media-assets.lacucinaitaliana.it/photos/63065e349b94c27aedccf07b/master/w_1600,c_limit/Sgombro-alla-rucola-con-pesto-di-erbe-e-olive1.jpg">
                         <div class="content-details fadeIn-bottom">
-                            <h5 class="content-title d-flex displayh3hov" ;> <span class="badge text-bg-secondary ">Vai
+                            <h5 class="content-title d-flex displayh3hov" ;> <span class="badge text-bg-secondary "
+                                    style="font-size:1.5rem !important;">Vai
                                     alla selezione</span></h5>
 
                         </div>
@@ -290,13 +304,14 @@
             <div id="elemento4" class="col-md animate__animated  animate__slideInUp">
                 <h2 style="justify-content: center;" class="col-md d-flex">Dessert</h2>
                 <div class="content">
-                    <a href="#">
+                    <a th:href="@{/dessert}">
 
                         <div class="content-overlay "></div>
                         <img class="content-image image1"
                             src="https://media-assets.lacucinaitaliana.it/photos/631778fde7cd14449a244908/master/w_1600,c_limit/Plum-cake-al-limone-e-frutti-di-bosco1.jpg">
                         <div class="content-details fadeIn-bottom">
-                            <h5 class="content-title d-flex displayh3hov"> <span class="badge text-bg-secondary ">Vai
+                            <h5 class="content-title d-flex displayh3hov"> <span class="badge text-bg-secondary "
+                                    style="font-size:1.5rem !important;">Vai
                                     alla selezione</span></h5>
                         </div>
                 </div>
@@ -320,7 +335,7 @@
                                         class="card-img-top " alt="Immagine 1">
                                     <div class="card-body">
                                         <h5 class="card-title">Pasta e patate alla napoletana</h5>
-                                        <a href="#" class="link">
+                                        <a th:href="@{/Pasta-con-patate-alla-napoletana}" class="link">
                                             <p class="card-text pcard"> Imparate con noi a preparare una voluttuosa
                                                 pasta
                                                 della tradizione campana, la pasta, patate e provola. Segreti compresi.
@@ -337,7 +352,7 @@
                                         class="card-img-top" alt="Immagine 2">
                                     <div class="card-body">
                                         <h5 class="card-title">Muffin al cioccolato</h5>
-                                        <a href="#" class="link">
+                                        <a th:href="@{/Muffin}" class="link">
                                             <p class="card-text pcard "> I muffin al cioccolato sono dei dolcetti
                                                 soffici e
                                                 deliziosi. Per iniziare
@@ -353,7 +368,7 @@
                                         class="card-img-top" alt="Immagine 3">
                                     <div class="card-body">
                                         <h5 class="card-title">Vellutata di fave e piselli</h5>
-                                        <a href="#" class="link">
+                                        <a th:href="@{/Vellutata-di-fave-e-piselli}" class="link">
                                             <p class="card-text pcard">La vellutata di piselli, è una vellutata
                                                 primaverile che si può consumare calda o tiepida. </p>
                                         </a>
@@ -370,7 +385,7 @@
                                         class="card-img-top" alt="Immagine 4">
                                     <div class="card-body">
                                         <h5 class="card-title">Pollo all'arancia</h5>
-                                        <a href="#" class="link">
+                                        <a th:href="@{/Pollo-con-spremuta-di-arancia}" class="link">
                                             <p class="card-text pcard">Il Pollo all'arancia è un secondo di carne facile
                                                 e veloce. Gli ingredienti necessari sono pochissimi, ma di grande
                                                 qualità. </p>
@@ -384,7 +399,7 @@
                                         class="card-img-top" alt="Immagine 5">
                                     <div class="card-body">
                                         <h5 class="card-title">Humus di avocado</h5>
-                                        <a href="#" class="link">
+                                        <a th:href="@{/Hummus-di-avocado-e-ceci}" class="link">
                                             <p class="card-text pcard">Aperitivo leggero con ricette a base di verdura e
                                                 frutta, come questo cremoso hummus di avocado</p>
                                         </a>
@@ -397,7 +412,7 @@
                                         class="card-img-top" alt="Immagine 6">
                                     <div class="card-body">
                                         <h5 class="card-title">Pancakes alla banana</h5>
-                                        <a href="#" class="link">
+                                        <a th:href="@{/Pancakes-alla-banana}" class="link">
                                             <p class="card-text pcard ">I pancakes alla banana ricetta light sono una
                                                 variante più sana e genuina dei classici pancakes americani.
                                                 Essi infatti contengono nell’impasto la polpa della banana matura e

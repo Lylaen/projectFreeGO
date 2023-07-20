@@ -1,0 +1,403 @@
+.rev{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+} 
+
+.cardbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.cardrev {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    background: red;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.5s;
+    border: none;
+    margin-bottom: 20px;
+    background-color: transparent;
+    
+}
+
+
+.cardrev .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    
+}
+
+.cardrev .circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#7c4dff ;
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+
+.cardrev:hover .circle:before {
+    background:  #ffbb01;
+    clip-path: circle(400px at center);
+
+}
+
+.cardrev img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.cardrev:hover img {
+    left: 72%;
+    height: 500px;
+
+}
+
+.cardrev:hover p   {
+    right: 65%;
+    
+
+}
+
+.cardrev:hover h3  {
+    right: 60% ;
+    
+
+}
+
+
+
+.cardrev .content {
+    position: relative;
+    width: 50%;
+    padding: 20px 20px 20px 40px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.cardrev:hover .content {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.cardrev .content h3{
+    color: #f7f6f8;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+    margin-bottom: 10px;
+
+}
+
+.p1{
+    text-transform: uppercase;
+    font-size: x-large;
+    
+}
+
+.p2{
+   
+    font-size: medium;
+    
+}
+
+.cardrev .content p{
+    position: relative;
+    color: #f7f6f8;
+    padding: 10px 20px;
+    border-radius: 10px;
+    
+    color: black;
+    margin-top: 5px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+
+}
+
+@media (max-width:991px) {
+    .cardrev {
+        width: auto;
+        max-width: 350px;
+        align-items: flex-start;
+        margin: 10px;
+
+    }
+    .cardrev:hover {
+        height: 600px;
+
+    }
+
+    .cardrev .content{
+        width: 100%;
+        left: 0;
+        padding: 30px;
+        
+
+    }
+    .cardrev:hover img{
+        top: 70%;
+        left: 50%;
+        height: 320px;
+
+    }
+
+    .cardrev:hover p{
+        
+        right: 0;
+       
+
+    }
+    
+}
+
+@media (max-width: 420px) {
+    .cardrev .content{
+        padding: 30px;
+    }
+}
+
+
+
+/* .rev{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+} 
+
+.cardbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.cardrev {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    background: #ccc; 
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.5s;
+    border: none;
+    margin-bottom: 20px;
+    background-color: transparent;
+    
+}
+
+
+.cardrev .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    
+}
+
+.cardrev .circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#7c4dff ;
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+
+.cardrev:hover .circle:before {
+    background:  #ffbb01;
+    clip-path: circle(400px at center);
+
+}
+
+.cardrev img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.cardrev:hover img {
+    left: 72%;
+    height: 500px;
+
+}
+
+.cardrev:hover .p1   {
+    right: 65%;
+    
+
+}
+
+.cardrev:hover .p2   {
+    right: 65%;
+    
+
+}
+
+.cardrev:hover h3  {
+    right: 60% ;
+    
+
+}
+
+
+
+.cardrev .content {
+    position: relative;
+    width: 50%;
+    padding: 20px 20px 20px 40px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+  overflow: unset;
+}
+
+.cardrev:hover .content {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.cardrev .content h3{
+    color: #f7f6f8;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+    margin-bottom: 10px;
+
+}
+
+.p1{
+    text-transform: uppercase;
+    font-size: x-large;
+    
+}
+
+.p2{
+   
+    font-size: medium;
+    
+}
+
+.cardrev .content .p1{
+    position: relative;
+    color: #f7f6f8;
+    padding: 10px 20px;
+    border-radius: 10px;
+    
+    color: black;
+    margin-top: 5px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+
+}
+
+.cardrev .content .p2{
+    position: relative;
+    color: #f7f6f8;
+    padding: 10px 20px;
+    border-radius: 10px;
+    
+    color: black;
+    margin-top: 5px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+
+}
+
+@media (max-width:991px) {
+    .cardrev {
+        width: auto;
+        max-width: 350px;
+        align-items: flex-start;
+        margin: 10px;
+
+    }
+    .cardrev:hover {
+        height: 600px;
+
+    }
+
+    .cardrev .content{
+        width: 100%;
+        left: 0;
+        padding: 30px;
+        
+
+    }
+    .cardrev:hover img{
+        top: 70%;
+        left: 50%;
+        height: 320px;
+
+    }
+
+    .cardrev:hover .p1{
+        
+        right: 0;
+       
+
+    }
+
+    .cardrev:hover .p2{
+        
+        right: 0;
+       
+
+    }
+    
+}
+
+@media (max-width: 420px) {
+    .cardrev .content{
+        padding: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+ */
