@@ -52,7 +52,7 @@
       max-height: 800px; 
       width: auto;
       height: auto;
-      margin-top: 7%;
+     
   }
 
 
@@ -136,6 +136,7 @@ font-style: normal;
   </style>
   <link rel="stylesheet" th:href="@{css/buttoncommenti.css}">
   <link rel="stylesheet" th:href="@{css/stylerevew.css}">
+  <link rel="stylesheet" th:href="@{css/heartbutton.css}">
 </head>
 
 <body>
@@ -156,7 +157,7 @@ font-style: normal;
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 my-3">
-			<button type="button" onclick="salvaPreferito(10)">Aggiungi ai preferiti</button>
+			
             <div id="Descrizione">
                 <h2 class="text-center">Descrizione</h2>
                 <p class="p">L'hummus di avocado è una deliziosa variante del classico hummus di ceci, la salsa tipica della tradizione mediorientale, e della salsa guacamole.Fresco e stuzzicante, può essere spalmato su fettine di pane tostato, per un aperitivo o un pranzo veloce.Si tratta di una preparazione nutriente e sostanziosa, adatta anche a chi segue un regime vegetariano e vegano.
@@ -178,9 +179,15 @@ font-style: normal;
                 </div>
             </div>
         </div>
-      <div id="immagine" class="col-lg-6 my-3">
-        <img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/hummusavocado.png}" style="max-height: 300px;border-radius: 9px;">
-      </div>
+      
+      <div class="card customcard1">
+                <img id="Image" class="img-fluid " th:src="@{/images/immaginiricette/hummusavocado.png}" style="max-height: 300px;border-radius: 9px;">
+                <div class="card-body">
+                <button type="button" class="btn hearty" onclick="salvaPreferito(10)"></button>
+                </div>
+                </div>
+       
+      
       
     </div>
     <div class="row justify-content-center">

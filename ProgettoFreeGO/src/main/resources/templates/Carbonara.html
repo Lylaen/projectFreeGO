@@ -49,7 +49,7 @@
 			max-height: 800px;
 			width: auto;
 			height: auto;
-			margin-top: 7%;
+			
 		}
 
 		#Descrizione {
@@ -131,6 +131,7 @@
 	<link rel="stylesheet" th:href="@{css/stylerevew.css}">
 	<script th:src="@{js/script.js}"></script>
 	<link rel="stylesheet" th:href="@{css/buttoncommenti.css}">
+	<link rel="stylesheet" th:href="@{css/heartbutton.css}">
 </head>
 
 <body>
@@ -152,7 +153,7 @@
 		</div>
 		<div class="row justify-content-center">
 			<div class="col-lg-6 my-3">
-				<button type="button" onclick="salvaPreferito(5)">Aggiungi ai preferiti</button>
+				
 				<div id="Descrizione">
 					<h2 class="text-center">Descrizione</h2>
 					<p class="p">Gli spaghetti alla carbonara sono un grande classico della cucina italiana. Una ricetta
@@ -172,8 +173,14 @@
 					</div>
 				</div>
 			</div>
+			<div class="card customcard1">
+                <img id="Image" class="img-fluid " th:src="@{/images/immaginiricette/carbonara.png}" style="max-height: 300px;border-radius: 9px;">
+                <div class="card-body">
+                <button type="button" class="btn hearty" onclick="salvaPreferito(5)"></button>
+                </div>
+                </div>
 			
-				<img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/carbonara.png}" style="max-height: 300px;border-radius: 9px;">
+				
 			
 		</div>
 		<div class="row justify-content-center">
