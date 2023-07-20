@@ -149,7 +149,7 @@ font-style: normal;
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 my-3">
-			<button type="button" onclick="salvaPreferito(10); chiudiDiv();">Aggiungi ai preferiti</button>
+			<button type="button" onclick="salvaPreferito(10)">Aggiungi ai preferiti</button>
             <div id="Descrizione">
                 <h2 class="text-center">Descrizione</h2>
                 <p class="p">L'hummus di avocado è una deliziosa variante del classico hummus di ceci, la salsa tipica della tradizione mediorientale, e della salsa guacamole.Fresco e stuzzicante, può essere spalmato su fettine di pane tostato, per un aperitivo o un pranzo veloce.Si tratta di una preparazione nutriente e sostanziosa, adatta anche a chi segue un regime vegetariano e vegano.
@@ -254,7 +254,7 @@ font-style: normal;
 				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
     			<input type="text" th:field="*{titolo}" id="input1">
     			<input type="text" th:field="*{testo}" id="input2">
-    			<button type="button" onclick="inviaCommento()" class="btn btn-primary">Invia</button>
+    			<button type="button" onclick="inviaCommento(); chiudiDiv();" class="btn btn-primary">Invia</button>
     		</form>
   			</div>
 			</section>

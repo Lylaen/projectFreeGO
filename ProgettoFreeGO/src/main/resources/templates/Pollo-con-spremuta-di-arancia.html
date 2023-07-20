@@ -148,7 +148,7 @@ h2 {
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 my-3">
-			<button type="button" onclick="salvaPreferito(8); chiudiDiv();">Aggiungi ai preferiti</button>
+			<button type="button" onclick="salvaPreferito(8)">Aggiungi ai preferiti</button>
             <div id="Descrizione">
                 <h2 class="text-center">Descrizione</h2>
                 <p class="p">La ricetta del Pollo all'arancia è semplice e veloce, in pochi minuti potrete servire questo sfizioso secondo piatto di carne bianca al profumo d'arancia.Nel pollo all'arancia, la cottura in padella con succo d’arance bionde vi farà ottenere una carne morbida, leggermente dorata all'esterno grazie a una veloce rosolatura iniziale.
@@ -249,7 +249,7 @@ h2 {
 				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
     			<input type="text" th:field="*{titolo}" id="input1">
     			<input type="text" th:field="*{testo}" id="input2">
-    			<button type="button" onclick="inviaCommento()" class="btn btn-primary">Invia</button>
+    			<button type="button" onclick="inviaCommento(); chiudiDiv();" class="btn btn-primary">Invia</button>
     		</form>
   			</div>
 			</section>

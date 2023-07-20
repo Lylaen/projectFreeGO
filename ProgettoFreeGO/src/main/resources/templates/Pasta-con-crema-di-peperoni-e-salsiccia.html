@@ -149,7 +149,7 @@ font-style: normal;
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 my-3">
-			<button type="button" onclick="salvaPreferito(4); chiudiDiv();">Aggiungi ai preferiti</button>
+			<button type="button" onclick="salvaPreferito(4)">Aggiungi ai preferiti</button>
             <div id="Descrizione">
                 <h2 class="text-center">Descrizione</h2>
                 <p class="p">La pasta  con crema di peperoni e salsiccia è un primo piatto davvero eccezionale! cremosissima veloce e soprattutto ricca di sapore.Un primo saporito e colorato, perfetto per la stagione estiva, momento in cui i peperoni danno il meglio di sé. Adatto per un pranzo domenicale in famiglia o una cena in terrazza con gli amici, conquisterà grandi e piccini per un gusto e una cremosità davvero irresistibili.
@@ -275,7 +275,7 @@ font-style: normal;
 				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
     			<input type="text" th:field="*{titolo}" id="input1">
     			<input type="text" th:field="*{testo}" id="input2">
-    			<button type="button" onclick="inviaCommento()" class="btn btn-primary">Invia</button>
+    			<button type="button" onclick="inviaCommento(); chiudiDiv();" class="btn btn-primary">Invia</button>
     		</form>
   			</div>
 			</section>

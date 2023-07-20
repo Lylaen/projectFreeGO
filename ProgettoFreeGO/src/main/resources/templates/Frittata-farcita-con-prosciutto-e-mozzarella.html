@@ -149,7 +149,7 @@ font-style: normal;
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 my-3">
-			<button type="button" onclick="salvaPreferito(7); chiudiDiv();">Aggiungi ai preferiti</button>
+			<button type="button" onclick="salvaPreferito(7)">Aggiungi ai preferiti</button>
             <div id="Descrizione">
                 <h2 class="text-center">Descrizione</h2>
                 <p class="p">>La frittata di mozzarella e prosciutto cotto è una pietanza golosa, realizzata con uova sbattute, mozzarella, prosciutto cotto  e foglie di menta tritate.Una preparazione di successo, che si caratterizza per una forte personalità di sapori. Una ricetta ben definita e in equilibrio, che sarà particolarmente apprezzata dai vostri commensali per la sua morbida scioglievolezza e per il suo sapore delicato ma non banale</p>
@@ -251,7 +251,7 @@ font-style: normal;
 				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
     			<input type="text" th:field="*{titolo}" id="input1">
     			<input type="text" th:field="*{testo}" id="input2">
-    			<button type="button" onclick="inviaCommento()" class="btn btn-primary">Invia</button>
+    			<button type="button" onclick="inviaCommento(); chiudiDiv();" class="btn btn-primary">Invia</button>
     		</form>
   			</div>
 			</section>
