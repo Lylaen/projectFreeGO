@@ -50,7 +50,7 @@
       max-height: 800px; 
       width: auto;
       height: auto;
-      margin-top: 7%;
+     
   }
 
 
@@ -131,6 +131,9 @@ h2 {
 
 
   </style>
+  <link rel="stylesheet" th:href="@{css/buttoncommenti.css}">
+  <link rel="stylesheet" th:href="@{css/stylerevew.css}">
+  <link rel="stylesheet" th:href="@{css/heartbutton.css}">
 </head>
 
 <body>
@@ -151,7 +154,7 @@ h2 {
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 my-3">
-			<button type="button" onclick="salvaPreferito(8)">Aggiungi ai preferiti</button>
+			
             <div id="Descrizione">
                 <h2 class="text-center">Descrizione</h2>
                 <p class="p">La ricetta del Pollo all'arancia è semplice e veloce, in pochi minuti potrete servire questo sfizioso secondo piatto di carne bianca al profumo d'arancia.Nel pollo all'arancia, la cottura in padella con succo d’arance bionde vi farà ottenere una carne morbida, leggermente dorata all'esterno grazie a una veloce rosolatura iniziale.
@@ -171,9 +174,17 @@ h2 {
 
                 </div>
             </div>
+            
+           
         </div>
+        
      
-        <img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/polloarancia.png}" style="max-height: 300px;border-radius: 9px;">
+          <div class="card customcard1">
+                <img id="Image" class="img-fluid " th:src="@{/images/immaginiricette/polloarancia.png}" style="max-height: 300px;border-radius: 9px;">
+                <div class="card-body">
+                <button type="button" class="btn hearty" onclick="salvaPreferito(8)"></button>
+                </div>
+                </div>
       
       
     </div>
@@ -240,20 +251,37 @@ h2 {
     </div>
   </div>
   <section>
-		<div class="card" th:each="a : ${commentiesistenti}" style="width: 18rem;">  
-  			<div class="card-body" >
-    			<h5 class="card-title" th:text="${a.titolo}"></h5>
-    			<h6 class="card-subtitle mb-2 text-muted" th:text="${a.testo}"></h6>
-    			 
-			</div>
+
+		<div class="container" style="min-height: 0;">
+        <div class="row d-flex justify-content-center">
+            
+    
+            <div class="col-lg-6  ">
+                <div class="card cardrev" th:each="a : ${commentiesistenti}">
+                    <div class="circle col"></div>
+                    <div class="content">
+                        <p class="p1" th:text="${a.titolo}"></p>
+                        <p class="p2" th:text="${a.testo}"></p>
+                    </div>
+                    <img class="img2" th:src="@{/images/imgrev/Rick-And-Morty.png}" alt="">
+    
+    
+                </div>
+            </div>
+    
+        </div>
+    </div>
+		
 		</div>
-			<button type="button" class="btn btn-primary" onclick="mostraDiv();">Scrivi un commento!</button>
+		<div class="buttons">
+			<button type="button" class="btn-hover color-8 " onclick="mostraDiv();">Scrivi un commento!</button>
 			<div id="myDiv" class="hidden">
-				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
-    			<input type="text" th:field="*{titolo}" id="input1">
-    			<input type="text" th:field="*{testo}" id="input2">
+				<form method="post" th:object="${commentdto}" th:action="@{/Pollo-con-spremuta-di-arancia}">
+    			<input type="text" th:field="*{titolo}" id="input1" required="Titolo del commento">
+    			<input type="text" th:field="*{testo}" id="input2" required="Commento">
     			<button type="button" onclick="inviaCommento(); chiudiDiv();" class="btn btn-primary">Invia</button>
     		</form>
+  			</div>
   			</div>
 			</section>
 	<div th:replace="fragments/commonFooter.html :: footer"></div>

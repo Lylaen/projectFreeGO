@@ -134,6 +134,8 @@ font-style: normal;
 
 
   </style>
+   <link rel="stylesheet" th:href="@{css/buttoncommenti.css}">
+  <link rel="stylesheet" th:href="@{css/stylerevew.css}">
 </head>
 
 <body>
@@ -260,20 +262,36 @@ font-style: normal;
     </div>
   </div>
   <section>
-		<div class="card" th:each="a : ${commentiesistenti}" style="width: 18rem;">  
-  			<div class="card-body" >
-    			<h5 class="card-title" th:text="${a.titolo}"></h5>
-    			<h6 class="card-subtitle mb-2 text-muted" th:text="${a.testo}"></h6>
-    			 
-			</div>
+		<div class="container" style="min-height: 0;">
+        <div class="row d-flex justify-content-center">
+            
+    
+            <div class="col-lg-6  ">
+                <div class="card cardrev" th:each="a : ${commentiesistenti}">
+                    <div class="circle col"></div>
+                    <div class="content">
+                        <p class="p1" th:text="${a.titolo}"></p>
+                        <p class="p2" th:text="${a.testo}"></p>
+                    </div>
+                    <img class="img2" th:src="@{/images/imgrev/Rick-And-Morty.png}" alt="">
+    
+    
+                </div>
+            </div>
+    
+        </div>
+    </div>
+		
 		</div>
-			<button type="button" class="btn btn-primary" onclick="mostraDiv();">Scrivi un commento!</button>
+		<div class="buttons">
+			<button type="button" class="btn-hover color-8 " onclick="mostraDiv();">Scrivi un commento!</button>
 			<div id="myDiv" class="hidden">
-				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
-    			<input type="text" th:field="*{titolo}" id="input1">
-    			<input type="text" th:field="*{testo}" id="input2">
+				<form method="post" th:object="${commentdto}" th:action="@{/Muffin}">
+    			<input type="text" th:field="*{titolo}" id="input1" required="Titolo del commento">
+    			<input type="text" th:field="*{testo}" id="input2" required="Commento">
     			<button type="button" onclick="inviaCommento(); chiudiDiv();" class="btn btn-primary">Invia</button>
     		</form>
+  			</div>
   			</div>
 			</section>
 	<div th:replace="fragments/commonFooter.html :: footer"></div>

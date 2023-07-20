@@ -1,0 +1,37 @@
+ .hearty {
+    
+   background: url(https://abs.twimg.com/a/1446686284/img/t1/web_heart_animation.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 100px !important;
+    width: 100px !important;
+    /* left: 100px;
+    top: 100px; */
+    margin-left: -40px !important;
+    z-index: 2;
+    margin-top: -100px !important;
+    border:none;
+    
+}
+
+.hearty:hover {
+  -webkit-animation: play 1s steps(7) ; 
+  background-color: trasparent !important;
+}
+
+@-webkit-keyframes play {
+   0% { background-position: 0px 0px; }
+    100% { background-position: -2800px 0px; }
+
+    
+}
+
+.customcard1{
+	max-width: 557px;
+	min-width: 557px;
+	max-height: 300px;
+	min-height: 300px;
+	margin-top: 7%;
+	padding: 0;
+}

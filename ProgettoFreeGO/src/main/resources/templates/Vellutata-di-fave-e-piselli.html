@@ -53,7 +53,7 @@
       max-height: 800px; 
       width: auto;
       height: auto;
-      margin-top: 7%;
+      
   }
 
 
@@ -130,10 +130,10 @@ font-style: normal;
 h2 {
     font-style: italic;
 }
-
-
-
   </style>
+  <link rel="stylesheet" th:href="@{css/buttoncommenti.css}">
+  <link rel="stylesheet" th:href="@{css/stylerevew.css}">
+  <link rel="stylesheet" th:href="@{css/heartbutton.css}">
 </head>
 
 <body>
@@ -154,7 +154,7 @@ h2 {
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6 my-3">
-			<button type="button" onclick="salvaPreferito(6)">Aggiungi ai preferiti</button>
+			
             <div id="Descrizione">
                 <h2 class="text-center" >Descrizione</h2>
                 <p class="p">La Vellutata di fave e piselli è un piatto primaverile e buonissimo da gustare a pranzo o a cena, con pane fresco o pane raffermo tostato.
@@ -176,8 +176,13 @@ h2 {
                 </div>
             </div>
         </div>
+         <div class="card customcard1">
+                <img id="Image" class="img-fluid " th:src="@{/images/immaginiricette/vellutatafave.png}" style="max-height: 300px;border-radius: 9px;">
+                <div class="card-body">
+                <button type="button" class="btn hearty" onclick="salvaPreferito(6)"></button>
+                </div>
+                </div>
       
-        <img id="Image" class="img-fluid mx-auto " th:src="@{/images/immaginiricette/vellutatafave.png}" style="max-height: 300px;border-radius: 9px;">
       
       
     </div>
@@ -258,21 +263,38 @@ h2 {
      
     </div>
   </div>
-  <section>
-		<div class="card" th:each="a : ${commentiesistenti}" style="width: 18rem;">  
-  			<div class="card-body" >
-    			<h5 class="card-title" th:text="${a.titolo}"></h5>
-    			<h6 class="card-subtitle mb-2 text-muted" th:text="${a.testo}"></h6>
-    			 
-			</div>
+    <section>
+
+		<div class="container" style="min-height: 0;">
+        <div class="row d-flex justify-content-center">
+            
+    
+            <div class="col-lg-6  ">
+                <div class="card cardrev" th:each="a : ${commentiesistenti}">
+                    <div class="circle col"></div>
+                    <div class="content">
+                        <p class="p1" th:text="${a.titolo}"></p>
+                        <p class="p2" th:text="${a.testo}"></p>
+                    </div>
+                    <img class="img2" th:src="@{/images/imgrev/Rick-And-Morty.png}" alt="">
+    
+    
+                </div>
+            </div>
+    
+        </div>
+    </div>
+		
 		</div>
-			<button type="button" class="btn btn-primary" onclick="mostraDiv();">Scrivi un commento!</button>
+		<div class="buttons">
+			<button type="button" class="btn-hover color-8 " onclick="mostraDiv();">Scrivi un commento!</button>
 			<div id="myDiv" class="hidden">
-				<form method="post" th:object="${commentdto}" th:action="@{/Pasta-con-patate-alla-napoletana}">
-    			<input type="text" th:field="*{titolo}" id="input1">
-    			<input type="text" th:field="*{testo}" id="input2">
+				<form method="post" th:object="${commentdto}" th:action="@{/Vellutata-di-fave-e-piselli}">
+    			<input type="text" th:field="*{titolo}" id="input1" required="Titolo del commento">
+    			<input type="text" th:field="*{testo}" id="input2" required="Commento">
     			<button type="button" onclick="inviaCommento(); chiudiDiv();" class="btn btn-primary">Invia</button>
     		</form>
+  			</div>
   			</div>
 			</section>
 	<div th:replace="fragments/commonFooter.html :: footer"></div>

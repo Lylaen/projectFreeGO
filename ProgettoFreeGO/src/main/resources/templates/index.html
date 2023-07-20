@@ -31,26 +31,28 @@
     <!-- NAVBAR FINE COPIA -->
     <header>
 
-        <div class="container-fluid sear d-flex ">
+        <div class="container-fluid sear d-flex justify-content-center">
 
             <div class="row-grid col-lg-8 " style="padding: -10rem;">
+            <div class="container-fluid d-flex ">
                 <div class="col-lg-12">
                     <h1 style="text-align: center;">Vai dove ti porta il cuore, al frigo!</h1>
+                </div>
                 </div>
                 <form method="post" th:action="@{/result}">
                     <div class="container-fluid">
                         <div class="main-search-input-wrap ">
-                            <div class="input-group input-group-lg shadow">
-                                <input type="text" class="form-control rounded-5 " aria-label="Sizing example input"
+                            <div class="input-group input-group-lg shadow col-sm">
+                                <input type="text" class="form-control " aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-lg" placeholder="Cerca Ingrediente"
                                     name="nomeing">
                                 <!--<span class="input-group-text btnmod" id="inputGroup-sizing-lg">Cerca</span> -->
-                                <button class="input-group-text btnmod rounded-5" type="submit">Cerca</button>
+                                <button class="input-group-text btnmod " type="submit">Cerca</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="container d-flex " style="gap: 10px; margin-top: 25px; justify-content: center;">
+                    <div class="container d-flex flex-wrap" style="gap: 10px; margin-top: 25px; justify-content: center;">
                         <button type="button" class="btn btn-primary rounded-5 " data-bs-toggle="modal"
                             data-bs-target="#modalIntolleranze">
                             Intolleranze
@@ -59,8 +61,9 @@
                             data-bs-target="#modalTempo">
                             Tempo
                         </button>
-                        <div class="input-group  ">
+                        
                             <div class="col-4 mt-2">
+                            <div class="input-group">
 
                                 <input type="text" class="form-control rounded-5 "
                                     aria-describedby="inputGroup-sizing-lg" name="grammiml"
@@ -72,7 +75,7 @@
                         <!-- fine sear ingrediente -->
 
 
-                        <div class="container-fluid d-flex flex-nowrap">
+                        <div class="container d-flex ">
                             <!-- Modal Intolleranze -->
                             <div class="modal fade col" id="modalIntolleranze" tabindex="-1"
                                 aria-labelledby="modalIntolleranzeLabel" aria-hidden="true">
