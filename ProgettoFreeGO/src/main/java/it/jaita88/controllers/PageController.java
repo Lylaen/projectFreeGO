@@ -112,7 +112,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(7);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
@@ -125,7 +125,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(5);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
@@ -138,7 +138,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(10);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
@@ -151,7 +151,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(11);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
@@ -164,7 +164,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(13);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
@@ -177,7 +177,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(9);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
@@ -190,7 +190,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(12);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
@@ -203,7 +203,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(4);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
@@ -216,7 +216,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(8);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
@@ -229,7 +229,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(6);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
@@ -242,7 +242,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(2);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
@@ -255,7 +255,7 @@ public class PageController {
 		model.addAttribute("condizione1", condizione1);
 		model.addAttribute("condizione2", condizione2);
 		UtenteLogin utenteLoggato = userRepository.findByUsername(SessionUtils.getUserUsername());
-		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(3);
+		List<Comment> commentiesistenti = servicecomment.commentiByRicetta(1);
 		model.addAttribute("commentiesistenti", commentiesistenti);
 		CommentDto commentdto = new CommentDto();
 		model.addAttribute("commentdto", commentdto);
