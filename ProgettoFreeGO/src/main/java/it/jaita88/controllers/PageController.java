@@ -46,6 +46,14 @@ public class PageController {
 		model.addAttribute("condizione2", condizione2);
 		return "chisiamo";
 	}
+	@GetMapping("/help")
+	public String help(Model model) {
+		boolean condizione1 = SessionUtils.isAdmin();
+		boolean condizione2 = SessionUtils.isUser();
+		model.addAttribute("condizione1", condizione1);
+		model.addAttribute("condizione2", condizione2);
+		return "help";
+	}
 	@GetMapping("/antipasti") 
 	public String antipasti(Model model) {
 		boolean condizione1 = SessionUtils.isAdmin();

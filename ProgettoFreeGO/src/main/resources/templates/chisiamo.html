@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Come usare Free-GO</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<style>
+		h3 {
+			color: #ff8200;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			margin-left: 10px;
+		}
+
+		h1 {
+			color: #f35000;
+			margin: 10px;
+		}
+
+		h5{
+			margin-left: 10px;
+			margin-bottom: 20px;
+		}
+
+		#testo {
+			padding: 30px;
+		}
+		#frigo {
+			width: 40%;
+			align-items: center;
+		}
+		body {
+			background-image: url('images/sfondo.png');
+		}
+		#logo {
+			width: 40%;
+			height: 20%;
+		}
+		#divlogo {
+			align-items: center;
+		}
+		#testo {
+			margin-top: 45px;		}
+	</style>
+</head>
+
+<body>
+	<nav>
+		<div th:if="${condizione1}">
+			<div th:replace="fragments/navbaradmin.html :: a-navbar"></div>
+		</div>
+		<div th:unless="${condizione1}" th:if="${condizione2}">
+			<div th:replace="fragments/navbarutente.html :: a-navbar"></div>
+		</div>
+		<div th:unless="${condizione1 or condizione2}">
+			<div th:replace="fragments/navgeneral.html :: a-navbar"></div>
+		</div>
+	</nav>
+	<div class="container-fluid d-flex">
+		<img th:src="@{/images/imgcs.png}" alt="frigo" id="frigo">
+		<div id="testo">
+			<h1>Perchè Free-GO?<h1></h1>
+				<h5>Sei appena tornato da lavoro, sei stanco e hai fame, ma non hai voglia di passare al supermarket.. tutto ciò che hai in frigo però, non ti ispira nessuna idea..<br></h5>				
+				<h5>Serve un po’ di ispirazione, ma non hai tempo di metterti a cercare nuove ricette che possano soddisfare il tuo bisogno di preparare qualcosa di sfizioso e particolare in poco tempo,  e con i soli ingredienti che hai in frigo, che non hai proprio idea di come abbinare tra loro…</h5>
+				<h5>Così, decidi che è arrivato il momento di affidarti a Free-go!</h5>
+				<h3>Cos'è Free-GO?<br></h3>
+				<h5>Free-go è una web app che ha lo scopo di creare ispirazione in coloro che amano la cucina e che odiano gli sprechi. </h5>
+		</div>
+	</div>
+	<div class="container-fluid d-flex" id="divlogo">
+		<div id="testo">
+			<h1>Logo</h1>
+			<h3>Perchè questo Logo?</h3>
+			<h5>Il logo scelto è minimal:  uno slogan contenente solo una carota come simbolo. Perché la carota? Perché è uno degli alimenti che maggiormente si trovano in frigo.</h5>
+			<h3>Perchè il nome Free-GO?</h3>
+			<h5>Il nome Free-go nasce da un gioco di parole tra quella italiana "frigo" e le parole inglesi "free" e "go" che significano  "libero di andare".</h5>
+		</div>
+		<img th:src="@{/images/logo4.png}" alt="logo" id="logo">
+	</div>
+	<div th:replace="fragments/commonFooter.html :: footer"></div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
